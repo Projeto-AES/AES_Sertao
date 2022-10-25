@@ -4,7 +4,6 @@ import CardMarket from '../src/components/CardMarket/CardMarket'
 import s from '../styles/container.module.scss'
 import { Button } from 'react-bootstrap'
 
-
 export default function Home() {
   return (
     <section>

@@ -1,11 +1,10 @@
-//import Form from "../components/login";
-//import Base from "../components/base";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from 'next/link';
 import { FaUserCircle } from "react-icons/fa";
 import { AiFillLock } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+
 const New3 = () => {
   const {
     register,
