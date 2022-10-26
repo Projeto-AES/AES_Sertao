@@ -1,35 +1,46 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
+import { Footer } from '../Footer/Footer';
 
-const Form = ({formData, forNewCorretor = true}) => {
+const Form = ({formData, forNewEmpresa = true}) => {
 
     const router = useRouter();
 
     const [form, setForm] = useState({
-        name: formData.name,
-        creci: formData.creci,
-        cidade: formData.cidade,
-        email: formData.email,
-        telefone: formData.telefone,
+        numeroSocio: formData.numeroSocio,
+        cnpj: formData.cnpj,
+        namejuridico: formData.namejuridico,
+        namefantasia: formData.namefantasia,
+        endereco: formData.endereco,
+        telefonefixo: formData.telefonefixo,
+        telefonecelular: formData.telefonecelular,
+        tipopessoa: formData.tipopessoa,
+        responsavel: formData.responsavel,
+        setor: formData.setor,
+        pagamento: formData.pagamento,
+        redessociais: formData.redessociais,
+        foto: formData.foto,
+        inscricaoestadual: formData.inscricaoestadual,
+        dataadmissao: formData.dataadmissao,
         
     })
 
     const [message, setMenssage] = useState([]);
 
     const handleChange = (e) => {
-        const { value, name } = e.target;
+        const { value, namejuridico } = e.target;
         setForm({
             ...form,
-            [name]: value,
+            [namejuridico]: value,
         });
     };
     
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(forNewCorretor){
-            postData();
+        if(forNewEmpresa){
+            postData(form);
         }else{
             putData(form);
         } 
@@ -39,7 +50,7 @@ const Form = ({formData, forNewCorretor = true}) => {
         setMenssage([]);
         const {id} = router.query;
         try {
-            const res = await fetch(`/api/corretor/${id}`, {
+            const res = await fetch(`../../../pages/api/${id}`, {
                  method: "PUT",
                  headers: {
                       "Content-type": "application/json",
@@ -60,7 +71,7 @@ const Form = ({formData, forNewCorretor = true}) => {
                    }
              }else{
                 setMenssage([]);
-                router.push("/admin/listarcorretor");
+                router.push("/admin");
             }
         } catch (error) {
             console.log(error);
@@ -70,7 +81,7 @@ const Form = ({formData, forNewCorretor = true}) => {
     const postData = async () => {
         try {
             console.log(form);
-                const res = await fetch("/api/corretor", {
+                const res = await fetch("../../../pages/api", {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -90,7 +101,7 @@ const Form = ({formData, forNewCorretor = true}) => {
                         ]);
                     }
                 }else{
-                    router.push("/admin/listarcorretor");
+                    router.push("/admin");
                 }
         } catch (error) {
             console.log(error);
@@ -99,21 +110,43 @@ const Form = ({formData, forNewCorretor = true}) => {
 
 
     return(
-        <form onSubmit={handleSubmit}>
-                <input className="form-control my-2" type="text" placeholder="Nome" autoComplete="off" name="name" required value={form.name} onChange={handleChange}/>
-                <input className="form-control my-2" type="text" placeholder="CRECI" autoComplete="off" name="creci" required value={form.creci} onChange={handleChange}/>
-                <input className="form-control my-2" type="text" placeholder="Cidade" autoComplete="off" name="cidade" required value={form.cidade} onChange={handleChange}/>
-                <input className="form-control my-2" type="text" placeholder="E-mail" autoComplete="off" name="email" required value={form.email} onChange={handleChange}/>
-                <input className="form-control my-2" type="text" placeholder="Telefone" autoComplete="off" name="telefone" required value={form.telefone} onChange={handleChange}/>
-                
-                <button className="btn btn-dark w-100" type="submit">{forNewCorretor ? "Enviar" : "Editar"}</button>
-                <Link href="/admin/listarcorretor">
-                    <a className="btn btn-dark w-100 my-2">Cancelar</a>
-                </Link>
-                {message.map(({ message }) => (
-                    <p key={message}>{message}</p>
-                ))}
-            </form>
+        <div>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <input className="form-control my-2" type="text" placeholder="Numero Socio" autoComplete="off" name="numeroSocio" required value={form.numeroSocio} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="CNPJ" autoComplete="off" name="cnpj" required value={form.cnpj} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Nome Juridico" autoComplete="off" name="namejuridico" required value={form.namejuridico} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Nome Fantasia" autoComplete="off" name="namefantasia" required value={form.namefantasia} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="endereco" autoComplete="off" name="endereco" required value={form.endereco} onChange={handleChange}/>
+
+                    <input className="form-control my-2" type="text" placeholder="Telefone Fixo" autoComplete="off" name="telefonefixo" required value={form.telefonefixo} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Telefone Celular" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Tipo Pessoa" autoComplete="off" name="tipopessoa" required value={form.tipopessoa} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Responsavel" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Setor/Ramo" autoComplete="off" name="setor" required value={form.setor} onChange={handleChange}/>
+                    <p>Situação Cadastral</p>
+                    <input type="radio" id="nao pago" name="pagamento" value={form.pagamento="false"}/>
+                    <label  htmlFor="pagamento">NAO PAGO</label>
+                    <input type="radio" id="pago" name="pagamento" value={form.pagamento="true"}/>
+                    <label  htmlFor="pagamento">PAGO</label>
+                    <input className="form-control my-2" type="text" placeholder="Redes Sociais" autoComplete="off" name="redessociais" required value={form.redessociais} onChange={handleChange}/>
+                    <input className="form-control my-2" type="file" placeholder="Foto" autoComplete="off" name="foto" required value={form.foto} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="inscricaoestadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Data Admissao" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
+                    
+                    <button className="btn btn-dark w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
+                    <Link href="/admin/">
+                        <a className="btn btn-dark w-100 my-2">Cancelar</a>
+                    </Link>
+                    {message.map(({ message }) => (
+                        <p key={message}>{message}</p>
+                    ))}
+                </form>
+            </div>
+            <footer>
+                <Footer />
+            </footer>
+        </div>
     );
 };
 

@@ -2,7 +2,7 @@ import { Header } from '../../src/components/Header/Header'
 import { Footer } from '../../src/components/Footer/Footer'
 import CardMarket from '../../src/components/CardMarket/CardMarket'
 import s from '../../styles/container.module.scss'
-import { Button } from 'react-bootstrap'
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -13,14 +13,15 @@ export default function Home() {
       </header>
       <section className={s.container}>
         <div>
-          <CardMarket />
-
+        <Link href="/admin/new"><a className="btn btn-dark w-100 mb-2">Nova Empressa</a></Link>
         </div>
         <div>
-          <Button>Cadastrar</Button>
+          <h2>Lista de empresas admin</h2>
         </div>
       </section>
-      
+      <footer>
+        <Footer />
+      </footer>
     </section>
   )
 }
