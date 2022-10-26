@@ -8,7 +8,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
     const router = useRouter();
 
     const [form, setForm] = useState({
-        numeroSocio: formData.numeroSocio,
+        numerosocio: formData.numerosocio,
         cnpj: formData.cnpj,
         namejuridico: formData.namejuridico,
         namefantasia: formData.namefantasia,
@@ -29,10 +29,10 @@ const Form = ({formData, forNewEmpresa = true}) => {
     const [message, setMenssage] = useState([]);
 
     const handleChange = (e) => {
-        const { value, namejuridico } = e.target;
+        const { value, name } = e.target;
         setForm({
             ...form,
-            [namejuridico]: value,
+            [name]: value,
         });
     };
     
@@ -50,7 +50,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
         setMenssage([]);
         const {id} = router.query;
         try {
-            const res = await fetch(`../../../pages/api/${id}`, {
+            const res = await fetch(`/api/${id}`, {
                  method: "PUT",
                  headers: {
                       "Content-type": "application/json",
@@ -81,7 +81,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
     const postData = async () => {
         try {
             console.log(form);
-                const res = await fetch("../../../pages/api", {
+                const res = await fetch("/api", {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -113,7 +113,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
         <div>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <input className="form-control my-2" type="text" placeholder="Numero Socio" autoComplete="off" name="numeroSocio" required value={form.numeroSocio} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Numero Socio" autoComplete="off" name="numerosocio" required value={form.numerosocio} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="CNPJ" autoComplete="off" name="cnpj" required value={form.cnpj} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="Nome Juridico" autoComplete="off" name="namejuridico" required value={form.namejuridico} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="Nome Fantasia" autoComplete="off" name="namefantasia" required value={form.namefantasia} onChange={handleChange}/>

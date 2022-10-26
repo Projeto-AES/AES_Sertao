@@ -3,27 +3,26 @@ import mongoose  from "mongoose";
 const EmpresaSchema = new mongoose.Schema({
     numerosocio:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira numero de asociado"],
     },
     cnpj: {
         type: String,
-        required: [true, "Insira um nome Valido"],
+        required: [true, "Insira o cnpj"],
     },
     namejuridico: {
         type: String,
-        required: [true, "Insira um nome Valido"],
+        required: [true, "Insira um nome Juridico Valido"],
     },
     namefantasia: {
         type: String,
-        required: [true, "Insira um nome Valido"],
+        required: [true, "Insira um nome Fantasia Valido"],
     },
     endereco: {
         type: String,
-        required: [true, "Insira uma Cidade Valida"],
+        required: [true, "Insira um endereco valido"],
     },
     email: {
         type: String,
-        required: [true, "Insira um E-Mail Valido"],
     },
     telefonefixo: {
         type: String,
@@ -33,19 +32,19 @@ const EmpresaSchema = new mongoose.Schema({
     },
     tipopessoa:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira tipo de pessoa"],
     },
     responsavel:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira um responsavel"],
     },
     setor:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira um setor"],
     },
     pagamento:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira se ha dividas"],
     },
     redessociais:{
         type: String,
@@ -55,11 +54,10 @@ const EmpresaSchema = new mongoose.Schema({
     },
     inscricaoestadual:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
     },
     dataadmissao:{
         type: String,
-        required: [true, "Insira um numero de Telefone"],
+        required: [true, "Insira a datta de admissao"],
     },
     
 }, {versionKey: false

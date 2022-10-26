@@ -4,7 +4,7 @@ import { Header } from '../../src/components/Header/Header';
 const New = () => {
 
     const formData = {
-        numeroSocio: "",
+        numerosocio: "",
         cnpj: "",
         namejuridico: "",
         namefantasia: "",
