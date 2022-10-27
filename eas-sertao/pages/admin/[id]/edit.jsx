@@ -1,7 +1,6 @@
-import Form from "../../../../components/Form1";
+import Form from "../../../src/components/Cadastro/Cadastra";
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
-import Header from "../../../../components/Header";
 
 const fetcher = async (url) => {
     const res = await fetch(url);
@@ -18,12 +17,12 @@ const fetcher = async (url) => {
 };
 
 
-const EditCorretor = () => {
+const EditEmpresa = () => {
     const router = useRouter();
     const { id } = router.query;
   
-    const { data: corretor, error } = useSWR(
-      id ? `/api/corretor/${id}` : null,
+    const { data: empresa, error } = useSWR(
+      id ? `/api/${id}` : null,
       fetcher
     );
   
@@ -31,7 +30,7 @@ const EditCorretor = () => {
       return <div>Error</div>;
     }
   
-    if (!corretor) {
+    if (!empresa) {
       return (
         <div className="container mt-5 text-center">
           <h1>Loading...</h1>
@@ -40,23 +39,32 @@ const EditCorretor = () => {
     }
   
     const formData = {
-      name: corretor.name,
-      creci: corretor.creci,
-      cidade: corretor.cidade,
-      email: corretor.email,
-      telefone: corretor.telefone, 
+        numerosocio: empresa.numerosocio,
+        cnpj: empresa.cnpj,
+        namejuridico: empresa.namejuridico,
+        namefantasia: empresa.namefantasia,
+        endereco:empresa.endereco,
+        telefonefixo: empresa.telefonefixo,
+        telefonecelular: empresa.telefonecelular,
+        tipopessoa: empresa.tipopessoa,
+        responsavel: empresa.responsavel,
+        setor: empresa.setor,
+        pagamento: empresa.pagamento,
+        redessociais: empresa.redessociais,
+        foto: empresa.foto,
+        inscricaoestadual: empresa.inscricaoestadual,
+        dataadmissao: empresa.dataadmissao, 
     };
   
     return (
       <div>
-        <Header/>
       <div className="container">
-        <h1>Editar Corretor</h1>
-        <Form forNewCorretor={false} formData={formData}></Form>
+        <h1>Editar Empresa</h1>
+        <Form forNewEmpresa={false} formData={formData}></Form>
       </div>
       </div>
     );
   };
   
-  export default EditCorretor;
+  export default EditEmpresa;
   
