@@ -1,5 +1,5 @@
 .caixa_footer {
-    position:absolute;
+    position:fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -19,8 +19,14 @@
     width: 10vh;
     border: 2px solid rgb(228, 224, 224);
     cursor: pointer;
+    position: relative;
+    bottom:39px;
 }
+.botao{
+    display: flex;
+    position: relative;
 
+}
 .buton_log:hover {
     background-color: white;
     color: red;

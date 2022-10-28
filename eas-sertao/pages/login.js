@@ -29,16 +29,16 @@ const New3 = () => {
   return (
     <>
    <main>
-        <div class="imag">
-          <form class="formin" onSubmit={handleSubmit(handleFormSubmit)}>
-            <FaUserCircle class="l1" size={90} />
-            <h1 class="topo">Login</h1>
-            <div class="alinha">
-            <label class="labe">Email:</label>
-            <div class="ca">
-              <AiOutlineUser class="l" size={30} />
+        <div className="imag">
+          <form className="formin" onSubmit={handleSubmit(handleFormSubmit)}>
+            <FaUserCircle className="l1" size={90} />
+            <h1 className="topo">Login</h1>
+            <div className="alinha">
+            <label className="labe">Email:</label>
+            <div className="ca">
+              <AiOutlineUser className="l" size={30} />
               <input
-                class="inp"
+                className="inp"
                 placeholder="digite seu email"
                 name="email"
                 id="email"
@@ -46,18 +46,18 @@ const New3 = () => {
                 onChange={envio}
               ></input>
             </div>
-            {errors.email && <span class="mens">Email é obrigatório</span>}
+            {errors.email && <span className="mens">Email é obrigatório</span>}
             
 
             <br />
             <br />
             <br />
 
-            <label class="labe">Senha:</label>
-            <div class="ca">
-              <AiFillLock class="l" size={30} />
+            <label className="labe">Senha:</label>
+            <div className="ca">
+              <AiFillLock className="l" size={30} />
               <input
-                class="inp"
+                className="inp"
                 placeholder="digite sua senha"
                 name="senha"
                 id="senha"
@@ -65,10 +65,10 @@ const New3 = () => {
                 onChange={envio}
               ></input>
             </div>
-            {errors.senha && <span class="mens">Senha é obrigatório</span>}
+            {errors.senha && <span className="mens">Senha é obrigatório</span>}
             </div>
-            <input class="sub1" type="submit" value="Login"></input>
-            <p class="logg">
+            <input className="sub1" type="submit" value="Login"></input>
+            <p className="logg">
               <Link href="/loginup">
                 <a className="log">Alterar minha senha?</a>
               </Link>
