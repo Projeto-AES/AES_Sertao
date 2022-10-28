@@ -1,3 +1,5 @@
+import { Header } from '../../../src/components/Header/Header'
+import { Footer } from '../../../src/components/Footer/Footer'
 import { useRouter } from "next/router";
 import conectarDB from "../../../lib/dbConnect";
 import Empresa from "../../../models/Empresa";
@@ -24,41 +26,40 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
     return (
         <div>
-            {/* TEM Q TER HEADER E FOOTER AQUI TBM, MAS SER ADICIONADO PADRAO LA NO APP */}
+            <header>
+                <Header />
+            </header>
             <div className={s.container}>
                 <h2>Informações</h2>
                 <div className={s.contentEmpresa}>
                     <div className="card-body">
-                        <div className="card_title">
-                            <h5 className="text-uppercase">{empresa.namefantasia}</h5>
-                        </div>
                         <div>
                             <Image
                                 src={comercio1}
                                 alt="Picture do comercio"
                             />
                         </div>
-                        <p className="fw-light">Endereco: {empresa.endereco}</p>
+
                         <p>
-                            -Nome Fantasia: Exata Agrícola
+                            -Nome Fantasia: {empresa.namefantasia}
                         </p>
                         <p>
-                            -Endereço: Perto da rua x
+                            -Endereço: {empresa.endereco}
                         </p>
                         <p>
-                            -Telefone/Whatsapp: 549999922222
+                            -Telefone/Whatsapp: {empresa.telefonecelular}
                         </p>
                         <p>
-                            -CNPJ:399442040222
+                            -CNPJ: {empresa.cnpj}
                         </p>
                         <p>
-                            -Razão social: Exatos
+                            -Razão social: {empresa.namejuridico}
                         </p>
                         <p>
-                            -E-mail para contato: exata@gmail.com
+                            -E-mail para contato: {empresa.email}
                         </p>
                         <p>
-                            -Responsável: xxxxx
+                            -Responsável: {empresa.responsavel}
                         </p>
                         <Link href="/">
                             <a className="btn btn-dark btn-sm me-2">Voltar</a>
@@ -66,6 +67,9 @@ const EmpresaPage = ({ success, error, empresa }) => {
                     </div>
                 </div>
             </div>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 };

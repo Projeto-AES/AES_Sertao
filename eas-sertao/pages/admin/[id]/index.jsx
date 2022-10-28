@@ -2,6 +2,9 @@ import { useRouter } from "next/router";
 import conectarDB from "../../../lib/dbConnect";
 import Empresa from "../../../models/Empresa";
 import Link from 'next/link';
+import s from '../../../styles/container.module.scss';
+import Image from 'next/image';
+import comercio1 from '../../../public/static/agroveterinaria.jpg';
 
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
@@ -31,16 +34,39 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
     return (
         <div>
-            <div className="container">
-                <h1>Dados Empresa</h1>
-                <div className="card">
+            <div className={s.container}>
+                <h2>Informações</h2>
+                <div className={s.contentEmpresa}>
                     <div className="card-body">
-                        <div className="card_title">
-                            <h5 className="text-uppercase">{empresa.namefantasia}</h5>
+                        <div>
+                            <Image
+                                src={comercio1}
+                                alt="Picture do comercio"
+                            />
                         </div>
-                        <p className="fw-light">Endereco: {empresa.endereco}</p>
-
-                        <Link href="/admin">
+                        
+                        <p>
+                            -Nome Fantasia: {empresa.namefantasia}
+                        </p>
+                        <p>
+                            -Endereço: {empresa.endereco}
+                        </p>
+                        <p>
+                            -Telefone/Whatsapp: {empresa.telefonecelular}
+                        </p>
+                        <p>
+                            -CNPJ: {empresa.cnpj}
+                        </p>
+                        <p>
+                            -Razão social: {empresa.namejuridico}
+                        </p>
+                        <p>
+                            -E-mail para contato: {empresa.email}
+                        </p>
+                        <p>
+                            -Responsável: {empresa.responsavel}
+                        </p>
+                        <Link href="/admin/">
                             <a className="btn btn-dark btn-sm me-2">Voltar</a>
                         </Link>
                         <Link href={`/admin/${empresa._id}/edit`}>

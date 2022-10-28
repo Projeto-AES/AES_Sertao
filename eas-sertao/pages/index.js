@@ -75,6 +75,7 @@ export default function Home({ empresas }) {
             }
           </div>
         </div>
+        
       </section>
       <footer>
         <Footer />
