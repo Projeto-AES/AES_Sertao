@@ -2,6 +2,9 @@ import { useRouter } from "next/router";
 import conectarDB from "../../../lib/dbConnect";
 import Empresa from "../../../models/Empresa";
 import Link from 'next/link';
+import s from '../../../styles/container.module.scss'
+import Image from 'next/image'
+import comercio1 from '../../../public/static/agroveterinaria.jpg'
 
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
@@ -21,18 +24,45 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
     return (
         <div>
-            <div className="container">
-                <h1>Dados Empresa</h1>
-                <div className="card">
+            {/* TEM Q TER HEADER E FOOTER AQUI TBM, MAS SER ADICIONADO PADRAO LA NO APP */}
+            <div className={s.container}>
+                <h2>Informações</h2>
+                <div className={s.contentEmpresa}>
                     <div className="card-body">
                         <div className="card_title">
                             <h5 className="text-uppercase">{empresa.namefantasia}</h5>
                         </div>
+                        <div>
+                            <Image
+                                src={comercio1}
+                                alt="Picture do comercio"
+                            />
+                        </div>
                         <p className="fw-light">Endereco: {empresa.endereco}</p>
-
+                        <p>
+                            -Nome Fantasia: Exata Agrícola
+                        </p>
+                        <p>
+                            -Endereço: Perto da rua x
+                        </p>
+                        <p>
+                            -Telefone/Whatsapp: 549999922222
+                        </p>
+                        <p>
+                            -CNPJ:399442040222
+                        </p>
+                        <p>
+                            -Razão social: Exatos
+                        </p>
+                        <p>
+                            -E-mail para contato: exata@gmail.com
+                        </p>
+                        <p>
+                            -Responsável: xxxxx
+                        </p>
                         <Link href="/">
                             <a className="btn btn-dark btn-sm me-2">Voltar</a>
-                        </Link>                        
+                        </Link>
                     </div>
                 </div>
             </div>
