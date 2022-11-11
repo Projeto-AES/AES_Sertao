@@ -28,9 +28,9 @@ const New4 = () => {
     <>
    
    <main>
-        <div className="imag">
+        <div className="imag2">
           <form className="formin" onSubmit={handleSubmit(handleFormSubmit)}>
-            <FaUserCircle className="l1" size={90} />
+            <FaUserCircle className="l1"  />
             <h1 className="topo">Redefinir senha</h1>
             <div className="alinha">
             <label className="labe">Senha atual:</label>

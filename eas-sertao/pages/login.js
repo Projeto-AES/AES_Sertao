@@ -31,12 +31,12 @@ const New3 = () => {
    <main>
         <div className="imag">
           <form className="formin" onSubmit={handleSubmit(handleFormSubmit)}>
-            <FaUserCircle className="l1" size={90} />
+            <FaUserCircle className="l1"  />
             <h1 className="topo">Login</h1>
             <div className="alinha">
             <label className="labe">Email:</label>
             <div className="ca">
-              <AiOutlineUser className="l" size={30} />
+              <AiOutlineUser className="l"  />
               <input
                 className="inp"
                 placeholder="digite seu email"
@@ -55,7 +55,7 @@ const New3 = () => {
 
             <label className="labe">Senha:</label>
             <div className="ca">
-              <AiFillLock className="l" size={30} />
+              <AiFillLock className="l"  />
               <input
                 className="inp"
                 placeholder="digite sua senha"

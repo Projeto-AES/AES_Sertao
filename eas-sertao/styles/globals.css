@@ -15,6 +15,14 @@ body{
   background-size: cover;
   background-image: url(https://www.faq-mac.com/wp-content/uploads/2015/03/com.apple_.desktop.admin_.jpg);
 }
+.imag2 {
+  background-color: #cccccc;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://www.faq-mac.com/wp-content/uploads/2015/03/com.apple_.desktop.admin_.jpg);
+}
 
 .alinha{
   text-align: left;
@@ -23,7 +31,7 @@ body{
 .formin {
   background-color: rgba(10, 10, 10, 0.5);
   width: 60vh;
-  height: 90vh;
+  height: auto;
   text-align: center;
   border-radius: 8px;
   color: white;
@@ -99,7 +107,7 @@ body{
 
 .topo {
   margin-bottom: 7vh;
-  font-size: 45px;
+  font-size: clamp(2.3rem, 3.4vw, 4rem);
 }
 .mens {
   color: rgb(255, 0, 0);
@@ -124,10 +132,12 @@ body{
 }
 .l1 {
   margin-top: 3vh;
+  font-size: clamp(5rem, 6.5vw, 8rem);
 }
 .l {
   float: left;
   margin-left: 9vh;
+  font-size: 30px;
 }
 .ca {
   margin-left: 3.5vh;
@@ -139,9 +149,10 @@ body{
     margin-left: 40%;
   }
   .labe {
-    font-size: 23px;
+    font-size: clamp(1.5rem, 2vw, 3.5rem);
     margin-right: 14vh;
   }
+  
 }
 
 /*tamanhos da tela*/
@@ -161,12 +172,24 @@ body{
     font-size: 25px;
   }
   .labe {
-    font-size: 30px;
+    font-size: clamp(1.5rem, 6vw, 3.5rem);
     margin-right: 24vh;
     text-align: left;
   }
 
   .mens {
     font-size: 20px;
+    font-size: clamp(1.2rem, 3.8vw, 2rem);
+  }
+  .topo {
+    margin-bottom: 7vh;
+    font-size: clamp(2.3rem, 8vw, 4rem);
+  }
+
+  .l {
+    font-size: clamp(1.5rem, 7vw, 3.2rem);
+  }
+  .log{
+    font-size: clamp(1.2rem, 4vw, 2rem);
   }
 }

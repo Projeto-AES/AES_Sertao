@@ -13,27 +13,20 @@ export const Footer = () => {
                 <div className={s.caixa_footer}>
                     <div className={s.sociais}>
                         <Link href="https://pt-br.facebook.com/aes.sertanense/">
-                            <BsFacebook className={s.ico} size={40} />
+                            <BsFacebook className={s.ico}  />
                         </Link>
 
                         <Link href="https://www.instagram.com/aessertanense/?igshid=YmMyMTA2M2Y%3D">
-                            <BsInstagram className={s.ico} size={40} />
+                            <BsInstagram className={s.ico}  />
                         </Link>
 
                         <Link href="https://api.whatsapp.com/send?phone=5554997153996&text=Ol%C3%A1%2C+achei+seu+contato+no+YouTube...">
-                            <BsWhatsapp className={s.ico} size={40} />
+                            <BsWhatsapp className={s.ico}  />
                         </Link>
 
                         <Link href="https://www.youtube.com/channel/UCV_IbPz2Y2gHjVo1l-nykXA">
-                            <BsYoutube className={s.ico} size={40} />
+                            <BsYoutube className={s.ico}  />
                         </Link>
-                    </div>
-                    <div className="botao">
-                    <Link href="/login">
-                        <p className={s.buton_log}>
-                            <a className={s.but}>Login</a>
-                        </p>
-                    </Link>
                     </div>
                     
                     <div className={s.aa}>@2022 Copyright: ADS 2022</div>

@@ -29,6 +29,7 @@
     background-color: #fff;
     margin: 30px;
 
+    font-size: clamp(1rem, -0.875rem + 3.33vw, 3rem);
     // @include h.min-md{
     //     width: 310px;
     //     margin: 0 auto;
@@ -51,4 +52,40 @@
     background-color: #fff;
     margin: 30px;
     min-height: 5vh;
+    font-size: clamp(1.3rem, 1.8vw, 1.5rem);
+}
+.busca1{
+    display: flex;
+    align-self: stretch;
+}
+.busca{
+    margin: 0 auto;
+    margin-top: 2vh;
+    display: flex;
+    
+    
+}
+
+.pesquisa{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 6px;
+    border-end-start-radius: 6px;
+    border-start-start-radius: 6px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    border-right: none;
+    width: 600px ;
+    margin-left: 3px;
+}
+.but{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1);
+    border-left: none;
+}
+
+@media screen and (max-width: 576px) {
+    .busca{
+        display: none;
+    }
 }

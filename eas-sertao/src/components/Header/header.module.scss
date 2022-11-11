@@ -19,6 +19,12 @@
 }
 
 .logo {
-  margin-top: 1vh;
   cursor: pointer;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .caixa {
+    height: 90px;
+  }
 }
