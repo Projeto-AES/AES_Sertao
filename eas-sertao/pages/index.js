@@ -16,6 +16,7 @@ export default function Home({ empresas }) {
       <header>
         <Header />
       </header>
+
       <div className={s.busca1}>
         <form className={s.busca}>
           <button type="button" className="btn btn-success ">Categorias</button>
@@ -27,9 +28,11 @@ export default function Home({ empresas }) {
             name="pesquisa"
             id="pesquisa"
           />
+          
           <button className={s.but} type='submit'><BiSearchAlt2 size={30} /></button>
         </form>
       </div>
+
       <section className={s.container}>
         <div>
           <div className={s.containerGrid}>

@@ -5,8 +5,6 @@ import conectarDB from "../../../lib/dbConnect";
 import Empresa from "../../../models/Empresa";
 import Link from 'next/link';
 import s from '../../../styles/container.module.scss';
-import Image from 'next/image';
-import comercio1 from '../../../public/static/agroveterinaria.jpg';
 import Banner from '../../../src/components/Banner/Banner';
 
 const EmpresaPage = ({ success, error, empresa }) => {
