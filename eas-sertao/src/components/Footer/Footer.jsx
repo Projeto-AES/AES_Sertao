@@ -28,6 +28,20 @@ export const Footer = () => {
                             <BsYoutube className={s.ico}  />
                         </Link>
                     </div>
+
+                    <div className={s.infos}>
+                    <Link className={s.help} href="/">
+                            <p className={s.parag}>Ajuda</p>
+                    </Link>
+
+                    <Link className={s.help} href="/">
+                            <p className={s.parag}>Contato</p>
+                    </Link>
+
+                    <Link className={s.help} href="/login">
+                            <p className={s.parag}>Login</p>
+                    </Link>
+                        </div>
                     
                     <div className={s.aa}>@2022 Copyright: ADS 2022</div>
                 </div>

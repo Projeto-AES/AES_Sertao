@@ -2,7 +2,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 110px;
     background-color: #2B2B24;
     display: flex;
     flex-direction: column;
@@ -60,6 +60,21 @@
 
 .but:hover {
     color: #0FBC71;
+}
+
+.infos{
+    display: flex;
+    justify-content: center;
+}
+
+
+.parag{
+    color: rgba(205, 201, 201, 0.668);
+    height: 2vh;
+    margin-left: 2vh;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    
 }
 
 @media screen and (max-width: 768px) {

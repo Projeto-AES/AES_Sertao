@@ -76,7 +76,7 @@ const New4 = () => {
             </div>
             <input className="sub2" type="submit" value="Alterar"></input>
             <p className="logg">
-              <Link href="/">
+              <Link href="/login">
                 <a className="log">Login?</a>
               </Link>
               </p>
