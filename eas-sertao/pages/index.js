@@ -9,6 +9,7 @@ import comercio1 from '../public/static/agroveterinaria.jpg'
 import comercio2 from '../public/static/dommatias.jpg'
 import comercio3 from '../public/static/exataagricola.jpg'
 import { BiSearchAlt2 } from "react-icons/bi";
+import ButtonDown from '../src/components/ButtonDown/ButtonDown';
 
 export default function Home({ empresas }) {
   return (
@@ -16,11 +17,8 @@ export default function Home({ empresas }) {
       <header>
         <Header />
       </header>
-
-      <div className={s.busca1}>
         <form className={s.busca}>
-          <button type="button" className="btn btn-success ">Categorias</button>
-
+          <ButtonDown/>
           <input
             className={s.pesquisa}
             type="text"
@@ -28,185 +26,318 @@ export default function Home({ empresas }) {
             name="pesquisa"
             id="pesquisa"
           />
+          <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
           
-          <button className={s.but} type='submit'><BiSearchAlt2 size={30} /></button>
         </form>
-      </div>
-
       <section className={s.container}>
-        <div>
-          <div className={s.containerGrid}>
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
-
+        <div className={s.containerGrid}>
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio1}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Agro Veterinaria</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Agro Veterinaria </h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio2}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Dom Matias</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Dom Matias</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio3}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Exata Agricola</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Exata Agricola</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
 
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
-
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio1}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Agro Veterinaria</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Agro Veterinaria </h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio2}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Dom Matias</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Dom Matias</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio3}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Exata Agricola</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Exata Agricola</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
 
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
-
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio1}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Agro Veterinaria</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Agro Veterinaria </h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio2}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Dom Matias</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
-            }
-            {
-              empresas.map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} key={_id}>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Dom Matias</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
                   <Image
                     src={comercio3}
                     alt="Picture do comercio"
                   />
-                  {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                  {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
-                  <h2 className="fw-normal text-center">Exata Agricola</h2>
-                  <div className="text-center">
-                    <Link href={`/public/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
-                    </Link>
-                  </div>
                 </div>
-              ))
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Exata Agricola</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
 
-            }
-          </div>
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio1}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Agro Veterinaria </h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio2}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Dom Matias</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio3}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Exata Agricola</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio1}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Agro Veterinaria </h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio2}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Dom Matias</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+          }
+          {
+            empresas.map(({ _id, namefantasia }) => (
+              <div className={s.cardEmpresa} key={_id}>
+                <div className={s.cardEmpresaImg}>
+                  <Image
+                    src={comercio3}
+                    alt="Picture do comercio"
+                  />
+                </div>
+                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
+                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
+                <h2 className={s.titleCard}>Exata Agricola</h2>
+                <div className="text-center">
+                  <Link href={`/public/${_id}`}>
+                    <a className="btn btn-success btn-sm">+Info</a>
+                  </Link>
+                </div>
+              </div>
+            ))
+
+          }
+          
         </div>
-
       </section>
       <footer>
         <Footer />

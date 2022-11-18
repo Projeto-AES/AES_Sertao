@@ -42,6 +42,15 @@
     // }
 }
 
+.cardEmpresaImg{
+    height: 140px;
+
+    img{
+        object-fit: contain;
+        max-height: 140px;
+    }
+}
+
 .contentEmpresa{
     text-align: center;
     width: 80%;
@@ -66,6 +75,12 @@
     
 }
 
+.titleCard{
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
 .pesquisa{
     background-color: rgba(255, 255, 255, 0.7);
     padding: 6px;
@@ -82,12 +97,6 @@
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1);
     border-left: none;
-}
-
-@media screen and (max-width: 576px) {
-    .busca{
-        display: none;
-    }
 }
 
 .h2 {
@@ -129,7 +138,7 @@
 
 .cardEmpresa{
     text-align: center;
-    width: 290px;
+    width: 350px;
     margin: 0 auto;
     padding: 20px 20px 25px 20px;
     box-shadow: 0px 1px 1px #C7C7CC;
@@ -162,46 +171,27 @@
     min-height: 5vh;
     font-size: clamp(1.3rem, 1.8vw, 1.5rem);
 }
-.busca1{
-    display: flex;
-    align-self: stretch;
-}
+
 .busca{
-    margin: 0 auto;
-    margin-top: 2vh;
-    display: flex; 
+    display: flex;
+    justify-content: center;
+    margin: 20px; 
 }
 
 .pesquisa{
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(235, 233, 233, 0.7);
     padding: 6px;
     border-end-start-radius: 6px;
     border-start-start-radius: 6px;
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
     border-right: none;
-    width: 400px;
-    min-width: none;
-    margin-left: 3px;
-}
-.but{
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1);
-    border-left: none;
-}
-
-@media screen and (max-width: 576px) {
-    .busca{
-        display: none;
-    }
+    width: 100%;
+    max-width: 400px;
 }
 
 .h2 {
     margin-top: 50px !important;
     color: #36404b !important;
-
 }
 
 .cadastro {
