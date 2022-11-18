@@ -31,7 +31,7 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                 <div className={s.contentEmpresa}>
                     <div className="card-body">
-                        <p>
+                        <p className={s.conteudo2}>
                             {empresa.namefantasia}
                         </p>
 
