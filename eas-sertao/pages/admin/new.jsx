@@ -1,5 +1,7 @@
 import Form from "../../src/components/Cadastro/Cadastra";
 import { Header } from '../../src/components/Header/Header';
+import { Footer } from "../../src/components/Footer/Footer";
+import s from '../../styles/container.module.scss'
 
 const New = () => {
 
@@ -25,10 +27,10 @@ const New = () => {
         <div >
             <Header />
             <div className="container">
-                <h1 className="my-3">Adicionar Nova Empresa</h1>
+            <h2 className={s.h2}>Adiciconar Nova Empresa</h2>
                 <Form formData={formData} />
             </div>
-
+        <Footer/>
         </div>
     );
 }
