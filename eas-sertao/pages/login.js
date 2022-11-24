@@ -34,7 +34,7 @@ const New3 = () => {
             <FaUserCircle className="l1"  />
             <h1 className="topo">Login</h1>
             <div className="alinha">
-            <label className="labe">Email:</label>
+            <label className="labe">Email</label>
             <div className="ca">
               <AiOutlineUser className="l"  />
               <input
@@ -53,7 +53,7 @@ const New3 = () => {
             <br />
             <br />
 
-            <label className="labe">Senha:</label>
+            <label className="labe">Senha</label>
             <div className="ca">
               <AiFillLock className="l"  />
               <input

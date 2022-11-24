@@ -33,7 +33,7 @@ const New4 = () => {
             <FaUserCircle className="l1"  />
             <h1 className="topo">Redefinir senha</h1>
             <div className="alinha">
-            <label className="labe">Senha atual:</label>
+            <label className="labe">Senha atual</label>
             <input
               className="inp"
               placeholder="digite a senha atual"
@@ -42,6 +42,7 @@ const New4 = () => {
               {...register("atual", { required: true })}
               onChange={envio}
             ></input>
+            <br />
             {errors.atual && (
               <span className="mens">Senha atual é obrigatório</span>
             )}
@@ -49,7 +50,7 @@ const New4 = () => {
             <br />
             <br />
 
-            <label className="labe">Nova senha:</label>
+            <label className="labe">Nova senha</label>
             <input
               className="inp"
               placeholder="digite a nova senha "
@@ -58,12 +59,13 @@ const New4 = () => {
               {...register("nova", { required: true })}
               onChange={envio}
             ></input>
+            <br />
             {errors.nova && <span className="mens">Nova senha é obrigatório</span>}
             <br />
             <br />
             <br />
 
-            <label className="labe">Repita a senha:</label>
+            <label className="labe">Repita a senha</label>
             <input
               className="inp"
               placeholder="repita a senha"
@@ -72,6 +74,7 @@ const New4 = () => {
               {...register("confirmar", { required: true })}
               onChange={envio}
             ></input>
+            <br />
             {errors.confirmar && <span className="mens">Senha não confere</span>}
             </div>
             <input className="sub2" type="submit" value="Alterar"></input>

@@ -17,6 +17,7 @@ body{
 }
 .imag2 {
   background-color: #cccccc;
+  overflow: auto;
   height: 110vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -25,7 +26,7 @@ body{
 }
 
 .alinha{
-  text-align: left;
+  
 }
 
 .formin {
@@ -39,16 +40,16 @@ body{
 }
 .inp {
   text-align: left;
+  width: 80%;
   align-items: center;
   margin-bottom: 1vh;
-  margin-left: 20%;
+  
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   padding-right: 10vh;
   border-radius: 8px;
   box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
+  
 }
 
 .sub1 {
@@ -56,7 +57,7 @@ body{
   cursor: pointer;
   margin-top: 10vh;
   width: 50%;
-  height: 6%;
+  
   margin-left: 25%;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
@@ -65,6 +66,7 @@ body{
   align-items: center;
   padding-top: 5px;
   font-size: 23px;
+  margin-bottom: 1vh;
 }
 .sub2 {
   color: rgb(255, 255, 255);
@@ -102,7 +104,7 @@ body{
 }
 .labe {
   font-size: 23px;
-  margin-left: 21%;
+  
 }
 
 .topo {
@@ -111,12 +113,12 @@ body{
 }
 .mens {
   color: rgb(255, 0, 0);
-  margin-left: 21%;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
 }
 
 .log {
   font-size: 17px;
-  margin-left: 5%;
+  
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -135,12 +137,12 @@ body{
   font-size: clamp(5rem, 6.5vw, 8rem);
 }
 .l {
-  float: left;
-  margin-left: 9vh;
+  
+  margin-left: 2vh;
   font-size: 30px;
 }
 .ca {
-  margin-left: 3.5vh;
+  
 }
 
 /*tamanhos da tela*/
@@ -150,7 +152,7 @@ body{
   }
   .labe {
     font-size: clamp(1.5rem, 2vw, 3.5rem);
-    margin-right: 14vh;
+    
   }
   
 }
@@ -161,6 +163,7 @@ body{
     margin: 1vh;
     width: 97%;
     height: 97%;
+    overflow: auto;
   }
 
   .inp {
@@ -173,12 +176,11 @@ body{
   }
   .labe {
     font-size: clamp(1.5rem, 6vw, 3.5rem);
-    margin-right: 24vh;
-    text-align: left;
+    
   }
 
   .mens {
-    font-size: 20px;
+    
     font-size: clamp(1.2rem, 3.8vw, 2rem);
   }
   .topo {

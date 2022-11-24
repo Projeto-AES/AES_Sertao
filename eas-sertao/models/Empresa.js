@@ -46,7 +46,13 @@ const EmpresaSchema = new mongoose.Schema({
         type: String,
         required: [true, "Insira se ha dividas"],
     },
-    redessociais:{
+    instagram:{
+        type: String,
+    },
+    facebook:{
+        type: String,
+    },
+    whatsapp:{
         type: String,
     },
     foto:{
