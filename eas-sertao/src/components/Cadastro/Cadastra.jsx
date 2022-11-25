@@ -157,9 +157,9 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
                     <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
                     
-                    <button className="btn btn-dark w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
+                    <button className="btn btn-success w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
                     <Link href="/admin/">
-                        <a className="btn btn-dark w-100 my-2">Cancelar</a>
+                        <a className="btn btn-danger w-100 my-2">Cancelar</a>
                     </Link>
                     {message.map(({ message }) => (
                         <p key={message}>{message}</p>
