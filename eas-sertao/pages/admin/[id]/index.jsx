@@ -76,15 +76,20 @@ const EmpresaPage = ({ success, error, empresa }) => {
                             <b>  Endereço:</b> {empresa.endereco}
                         </p>
                         <div className={s.soc}>
-                            <Link href={empresa.instagram}>
+                        {empresa.instagram.length !=0 ?
+                         <Link href={empresa.instagram}>
                                 <RiInstagramFill className={s.ico2} />
-                            </Link>
-                            <Link href={empresa.facebook}>
+                            </Link> : ''}
+                            
+                        {empresa.facebook.length !=0 ?
+                        <Link href={empresa.facebook}>
                                 <FaFacebookSquare className={s.ico2} />
-                            </Link>
+                            </Link> : ''}
+
+                        {empresa.whatsapp.length !=0 ?
                             <Link href={empresa.whatsapp}>
                                 <IoLogoWhatsapp className={s.ico2} />
-                            </Link>
+                            </Link> : ''}
                         </div>
                         <div>
                             <iframe src={empresa.mapa}
