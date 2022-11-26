@@ -55,6 +55,9 @@ const EmpresaSchema = new mongoose.Schema({
     whatsapp:{
         type: String,
     },
+    mapa:{
+        type: String,
+    },
     foto:{
         type: String,
     },

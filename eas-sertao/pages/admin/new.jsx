@@ -20,6 +20,7 @@ const New = () => {
         instagram: "",
         facebook: "",
         whatsapp: "",
+        mapa: "",
         foto: "",
         inscricaoestadual: "",
         dataadmissao: "",

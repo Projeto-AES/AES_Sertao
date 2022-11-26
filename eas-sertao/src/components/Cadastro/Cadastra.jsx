@@ -22,12 +22,13 @@ const Form = ({formData, forNewEmpresa = true}) => {
         instagram: formData.instagram,
         facebook: formData.facebook,
         whatsapp: formData.whatsapp,
+        mapa: formData.mapa,
         foto: formData.foto,
         inscricaoestadual: formData.inscricaoestadual,
         dataadmissao: formData.dataadmissao,
         
     })
-
+    
     const [message, setMenssage] = useState([]);
 
     const handleChange = (e) => {
@@ -41,6 +42,10 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        //Retirar o iframe do link do mapa
+        const clean = form.mapa.substring(13, form.mapa.length - 11);
+        form.mapa = clean;
+        //
         if(forNewEmpresa){
             postData(form);
         }else{
@@ -82,6 +87,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const postData = async () => {
         try {
+            //setForm(form.mapa= form.mapa.substring(13, form.mapa.length - 11));
             console.log(form);
                 const res = await fetch("/api", {
                     method: "POST",
@@ -156,6 +162,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <input className="form-control my-2" type="file" placeholder="Foto" autoComplete="off" name="foto" required value={form.foto} onChange={handleChange}/>
                     <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
                     <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange}/>
                     
                     <button className="btn btn-success w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
                     <Link href="/admin/">

@@ -53,6 +53,7 @@ const EditEmpresa = () => {
         instagram: empresa.instagram,
         facebook: empresa.facebook,
         whatsapp: empresa.whatsapp,
+        mapa: empresa.mapa,
         foto: empresa.foto,
         inscricaoestadual: empresa.inscricaoestadual,
         dataadmissao: empresa.dataadmissao, 
