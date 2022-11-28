@@ -44,7 +44,7 @@ const EmpresaSchema = new mongoose.Schema({
     },
     pagamento:{
         type: String,
-        required: [true, "Insira se ha dividas"],
+        
     },
     instagram:{
         type: String,
@@ -66,7 +66,7 @@ const EmpresaSchema = new mongoose.Schema({
     },
     dataadmissao:{
         type: String,
-        required: [true, "Insira a datta de admissao"],
+        
     },
     
 }, {versionKey: false

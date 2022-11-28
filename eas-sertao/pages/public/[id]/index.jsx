@@ -23,7 +23,6 @@ const EmpresaPage = ({ success, error, empresa }) => {
                 </Link>
             </div>
         );
-        //if (empresa.instagram.length != 0) {
     }
 
     return (

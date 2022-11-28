@@ -1,4 +1,4 @@
-import Form from "../../../src/components/Cadastro/Cadastra";
+import Form from "../../../../src/components/Cadastro/Cadastra";
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
 
@@ -22,7 +22,7 @@ const EditEmpresa = () => {
     const { id } = router.query;
   
     const { data: empresa, error } = useSWR(
-      id ? `/api/${id}` : null,
+      id ? `/api/empresa/${id}` : null,
       fetcher
     );
   
@@ -44,6 +44,7 @@ const EditEmpresa = () => {
         namejuridico: empresa.namejuridico,
         namefantasia: empresa.namefantasia,
         endereco:empresa.endereco,
+        email: empresa.email,
         telefonefixo: empresa.telefonefixo,
         telefonecelular: empresa.telefonecelular,
         tipopessoa: empresa.tipopessoa,
@@ -54,9 +55,8 @@ const EditEmpresa = () => {
         facebook: empresa.facebook,
         whatsapp: empresa.whatsapp,
         mapa: empresa.mapa,
-        foto: empresa.foto,
         inscricaoestadual: empresa.inscricaoestadual,
-        dataadmissao: empresa.dataadmissao, 
+        dataadmissao: empresa.dataadmissao,
     };
   
     return (

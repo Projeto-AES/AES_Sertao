@@ -1,7 +1,7 @@
-import Form from "../../src/components/Cadastro/Cadastra";
-import { Header } from '../../src/components/Header/Header';
-import { Footer } from "../../src/components/Footer/Footer";
-import s from '../../styles/container.module.scss'
+import Form from "../../../src/components/Cadastro/Cadastra";
+import { Header } from '../../../src/components/Header/Header';
+import { Footer } from "../../../src/components/Footer/Footer";
+import s from '../../../styles/container.module.scss'
 
 const New = () => {
 

@@ -23,10 +23,8 @@ const Form = ({formData, forNewEmpresa = true}) => {
         facebook: formData.facebook,
         whatsapp: formData.whatsapp,
         mapa: formData.mapa,
-        foto: formData.foto,
         inscricaoestadual: formData.inscricaoestadual,
         dataadmissao: formData.dataadmissao,
-        
     })
     
     const [message, setMenssage] = useState([]);
@@ -42,10 +40,6 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        //Retirar o iframe do link do mapa
-        const clean = form.mapa.substring(13, form.mapa.length - 11);
-        form.mapa = clean;
-        //
         if(forNewEmpresa){
             postData(form);
         }else{
@@ -57,7 +51,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
         setMenssage([]);
         const {id} = router.query;
         try {
-            const res = await fetch(`/api/${id}`, {
+            const res = await fetch(`/api/empresa/${id}`, {
                  method: "PUT",
                  headers: {
                       "Content-type": "application/json",
@@ -87,9 +81,8 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const postData = async () => {
         try {
-            //setForm(form.mapa= form.mapa.substring(13, form.mapa.length - 11));
             console.log(form);
-                const res = await fetch("/api", {
+                const res = await fetch("/api/empresa", {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -131,9 +124,9 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <input className="form-control my-2" type="tel" placeholder="Telefone Celular" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="Tipo Pessoa" autoComplete="off" name="tipopessoa" required value={form.tipopessoa} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="Responsável" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange}/>
-                    
-                    <label  htmlFor="Setor">Setor/Categoria</label><br/>
-                    <select name="setor" onChange={handleChange}>
+
+                    <label className="my-3" htmlFor="Setor">Setor/Categoria</label>
+                    <select name="setor" value={form.setor} onChange={handleChange}>
                         <option value="" disabled selected>Selecione a categoria</option>
                         <option value="Mercado">Mercado</option>
                         <option value="Vestimenta">Vestimenta</option>
@@ -147,25 +140,23 @@ const Form = ({formData, forNewEmpresa = true}) => {
                         <option value="Restaurante">Restaurante</option>
                         <option value="Posto de gasolina">Posto de gasolina</option>
                     </select>
-                    <br/>
-                    <br/>
-                    <p>Situação Cadastral</p>
-                    <input type="radio" id="nao pago" name="pagamento" value={form.pagamento="false"}/>
-                    <label  htmlFor="pagamento">NÃO PAGO</label><br/>
-                    <input type="radio" id="pago" name="pagamento" value={form.pagamento="true"}/>
-                    <label  htmlFor="pagamento">PAGO</label>
 
+                    <p>Situação Cadastral</p>
+                    <input type="radio" id="nao pago" name="pagamento" value={form.pagamento} onChange={handleChange}/>
+                    <label  htmlFor="pagamento">NÃO PAGO</label><br/>
+
+                    <input type="radio" id="pago" name="pagamento" value={form.pagamento} onChange={handleChange}/>
+                    <label  htmlFor="pagamento">PAGO</label>
+                    
                     <input className="form-control my-2" type="url" placeholder="Instagram" autoComplete="off" name="instagram" value={form.instagram} onChange={handleChange}/>
                     <input className="form-control my-2" type="url" placeholder="Facebook" autoComplete="off" name="facebook" value={form.facebook} onChange={handleChange}/>
                     <input className="form-control my-2" type="url" placeholder="Whatsapp" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange}/>
-
-                    <input className="form-control my-2" type="file" placeholder="Foto" autoComplete="off" name="foto" required value={form.foto} onChange={handleChange}/>
+                    <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange}/>
                     <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
                     <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange}/>
-                    
+                
                     <button className="btn btn-success w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
-                    <Link href="/admin/">
+                    <Link href="/admin">
                         <a className="btn btn-danger w-100 my-2">Cancelar</a>
                     </Link>
                     {message.map(({ message }) => (

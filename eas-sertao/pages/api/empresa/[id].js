@@ -1,5 +1,5 @@
-import conectarDB from "../../lib/dbConnect"
-import Empresa from "../../models/Empresa"
+import conectarDB from "../../../lib/dbConnect"
+import Empresa from "../../../models/Empresa"
 
 export default async function handler(req, res) {
   

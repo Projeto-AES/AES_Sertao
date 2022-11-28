@@ -40,8 +40,6 @@ export default function Home({ empresas }) {
                     alt="Picture do comercio"
                   />
                 </div>
-                {/* <svg className="bd-placeholder-img " width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> */}
-                {/* <h2 className="fw-normal text-center">{namefantasia}</h2> */}
                 <h2 className={s.titleCard}>{namefantasia}</h2>
                 <div className="text-center">
                   <Link href={`/public/${_id}`}>

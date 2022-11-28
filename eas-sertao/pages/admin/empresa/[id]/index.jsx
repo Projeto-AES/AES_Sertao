@@ -1,14 +1,16 @@
 import { useRouter } from "next/router";
-import { Header } from '../../../src/components/Header/Header';
-import { Footer } from '../../../src/components/Footer/Footer';
-import conectarDB from "../../../lib/dbConnect";
-import Empresa from "../../../models/Empresa";
+import { Header } from '../../../../src/components/Header/Header';
+import { Footer } from '../../../../src/components/Footer/Footer';
+
+import conectarDB from "../../../../lib/dbConnect";
+import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
-import s from '../../../styles/container.module.scss';
-import Banner from '../../../src/components/Banner/Banner';
+import s from '../../../../styles/container.module.scss';
+import Banner from '../../../../src/components/Banner/Banner';
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
+
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
 
@@ -26,10 +28,10 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
     const deleteData = async (id) => {
         try {
-            await fetch(`/api/${id}`, {
+            await fetch(`/api/empresa/${id}`, {
                 method: "DELETE",
             });
-            router.push("/admin");
+            router.push("/admin/empresa");
         } catch (error) {
             console.log(error);
         }
@@ -50,7 +52,7 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                         <Banner></Banner>
                         <div className={s.opcao}>
-                            <Link href={`/admin/${empresa._id}/edit`}>
+                            <Link href={`/admin/empresa/${empresa._id}/edit`}>
                                 <   a className="btn btn-warning btn-sg me-2">Editar</a>
                             </Link>
                             <button className="btn btn-danger btn-sg" onClick={() => deleteData(empresa._id)}>Excluir</button>
