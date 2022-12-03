@@ -135,6 +135,7 @@ body{
 .l1 {
   margin-top: 3vh;
   font-size: clamp(5rem, 6.5vw, 8rem);
+  cursor: pointer;
 }
 .l {
   

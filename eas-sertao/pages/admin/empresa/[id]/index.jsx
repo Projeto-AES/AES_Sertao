@@ -10,9 +10,18 @@ import Banner from '../../../../src/components/Banner/Banner';
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-
+import { useSession } from 'next-auth/react';
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
+
+    //sessão
+    const {data: session } = useSession({
+        required: true
+      });
+    
+      if(!session) {
+        return <></>
+      }
 
     if (!success) {
         return (

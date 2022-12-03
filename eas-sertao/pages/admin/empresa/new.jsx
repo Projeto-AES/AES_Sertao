@@ -2,9 +2,16 @@ import Form from "../../../src/components/Cadastro/Cadastra";
 import { Header } from '../../../src/components/Header/Header';
 import { Footer } from "../../../src/components/Footer/Footer";
 import s from '../../../styles/container.module.scss'
-
+import { useSession } from 'next-auth/react';
 const New = () => {
-
+    //sessão
+    const {data: session } = useSession({
+        required: true
+      });
+    
+      if(!session) {
+        return <></>
+      }
     const formData = {
         numerosocio: "",
         cnpj: "",
@@ -37,5 +44,6 @@ const New = () => {
         </div>
     );
 }
+
 
 export default New

@@ -4,8 +4,13 @@ import Link from 'next/link';
 import { FaUserCircle } from "react-icons/fa";
 import { AiFillLock } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import { signIn } from "next-auth/react";
+
+import { useRouter } from "next/dist/client/router";
 
 const New3 = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -23,7 +28,16 @@ const New3 = () => {
   }
 
   async function handleFormSubmit() {
-    console.log(texto);
+
+    const res = await signIn('credentials',{
+      email: texto.email,
+      senha: texto.senha,
+      redirect: false
+    })
+    console.log(res);
+    if(res.status === 200){
+      router.push("/admin");
+    }
   }
 
   return (
@@ -31,7 +45,9 @@ const New3 = () => {
    <main>
         <div className="imag">
           <form className="formin" onSubmit={handleSubmit(handleFormSubmit)}>
+          <Link href="/">
             <FaUserCircle className="l1"  />
+            </Link>
             <h1 className="topo">Login</h1>
             <div className="alinha">
             <label className="labe">Email</label>
@@ -59,6 +75,7 @@ const New3 = () => {
               <input
                 className="inp"
                 placeholder="digite sua senha"
+                type="password"
                 name="senha"
                 id="senha"
                 {...register("senha", { required: true })}

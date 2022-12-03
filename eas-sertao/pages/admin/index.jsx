@@ -7,19 +7,35 @@ import Link from 'next/link';
 import Image from 'next/image'
 import comercio1 from '../../public/static/agroveterinaria.jpg'
 
+import { useSession, signIn, signOut } from "next-auth/react"
+
 
 export default function Listar({ empresas }) {
+  //sessão
+  const {data: session } = useSession({
+    required: true
+  });
+
+  if(!session) {
+    return <></>
+  }
+  
   return (
     <section className='index'>
       <header>
         <Header />
       </header>
+      <button className={s.out} onClick={() =>{
+                        signOut({redirect: false})
+                    } }>Encerrar</button>
       <section className={s.container}>
         <div>
+        
           <h2 className={s.h2}>Lista de Empresas AES</h2>
           <Link href="/admin/empresa/new">
             <button className={s.cadastro}>Cadastrar Nova Empresa</button>
           </Link>
+          
         <div>
         </div>
         
@@ -69,3 +85,4 @@ export async function getServerSideProps() {
     console.log(error);
   }
 }
+

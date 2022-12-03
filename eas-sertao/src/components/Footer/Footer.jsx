@@ -4,7 +4,7 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
-
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export const Footer = () => {
     return (
@@ -38,9 +38,11 @@ export const Footer = () => {
                             <p className={s.parag}>Contato</p>
                     </Link>
 
-                    <Link className={s.help} href="/login">
-                            <p className={s.parag}>Login</p>
-                    </Link>
+                    <button className={s.parag} onClick={() =>{
+                        signIn()
+                    } }>Login</button>
+
+                
                         </div>
                     
                     <div className={s.aa}>@2022 Copyright: ADS 2022</div>

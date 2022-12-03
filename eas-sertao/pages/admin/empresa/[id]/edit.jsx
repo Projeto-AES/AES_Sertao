@@ -1,6 +1,7 @@
 import Form from "../../../../src/components/Cadastro/Cadastra";
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
+import { useSession } from 'next-auth/react';
 
 const fetcher = async (url) => {
     const res = await fetch(url);
@@ -18,6 +19,7 @@ const fetcher = async (url) => {
 
 
 const EditEmpresa = () => {
+  
     const router = useRouter();
     const { id } = router.query;
   
@@ -25,7 +27,15 @@ const EditEmpresa = () => {
       id ? `/api/empresa/${id}` : null,
       fetcher
     );
+    //sessão
+    const {data: session } = useSession({
+      required: true
+    });
   
+    if(!session) {
+      return <></>
+    }
+    
     if (error) {
       return <div>Error</div>;
     }
