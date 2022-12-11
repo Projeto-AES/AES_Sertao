@@ -6,6 +6,7 @@ import Empresa from '../../models/Empresa';
 import Link from 'next/link';
 import Image from 'next/image'
 import comercio1 from '../../public/static/agroveterinaria.jpg'
+import { BiLogOut } from "react-icons/bi";
 
 import { useSession, signIn, signOut } from "next-auth/react"
 
@@ -27,7 +28,7 @@ export default function Listar({ empresas }) {
       </header>
       <button className={s.out} onClick={() =>{
                         signOut({redirect: false})
-                    } }>Encerrar</button>
+                    } }>sair<BiLogOut size={35} /></button>
       <section className={s.container}>
         <div>
         
@@ -41,8 +42,24 @@ export default function Listar({ empresas }) {
         
           <div className={s.containerGrid}>
             {
-              empresas.map(({ _id, namefantasia }) => (
+              empresas.filter(e=>e.pagamento =='true').map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} key={_id}>
+                  <Image
+                    src={comercio1}
+                    alt="Picture do comercio"
+                  />
+                  <h2 className="fw-normal text-center">{namefantasia}</h2>
+                  <div className="text-center">
+                    <Link href={`/admin/empresa/${_id}`}>
+                      <a className="btn btn-success btn-sm">+Info</a>
+                    </Link>
+                  </div>
+                </div>
+              ))
+            }
+            {
+              empresas.filter(e=>e.pagamento !='true').map(({ _id, namefantasia }) => (
+                <div className={s.cardEmpresa} style={{backgroundColor: "rgb(237, 113,104)"}} key={_id}>
                   <Image
                     src={comercio1}
                     alt="Picture do comercio"

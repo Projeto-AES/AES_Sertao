@@ -40,6 +40,10 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+
+        const clean = form.mapa.substring(13, form.mapa.length - 11);
+        form.mapa = clean;
+
         if(forNewEmpresa){
             postData(form);
         }else{
@@ -154,7 +158,6 @@ const Form = ({formData, forNewEmpresa = true}) => {
                         <option value="telecom">Telecomunicaçao</option>
 
                     </select>
-
                     <br/>
                     <label className="my-3" htmlFor="Setor">Situação Cadastral</label>
                     <select name="pagamento" value={form.pagamento} onChange={handleChange}>
@@ -162,6 +165,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                         <option value="true">PAGO</option>
                         <option value="false">Não PAGO</option>
                     </select>
+                   
                     
                     <input className="form-control my-2" type="url" placeholder="Instagram" autoComplete="off" name="instagram" value={form.instagram} onChange={handleChange}/>
                     <input className="form-control my-2" type="url" placeholder="Facebook" autoComplete="off" name="facebook" value={form.facebook} onChange={handleChange}/>

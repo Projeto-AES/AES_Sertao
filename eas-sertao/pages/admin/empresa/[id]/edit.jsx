@@ -1,4 +1,4 @@
-import Form from "../../../../src/components/Cadastro/Cadastra";
+import Form from "../../../../src/components/Cadastro/Editar";
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
 import { useSession } from 'next-auth/react';

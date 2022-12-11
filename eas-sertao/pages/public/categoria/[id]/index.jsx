@@ -1,11 +1,11 @@
-import { Header } from '../../../src/components/Header/Header';
-import { Footer } from '../../../src/components/Footer/Footer';
+import { Header } from '../../../../src/components/Header/Header';
+import { Footer } from '../../../../src/components/Footer/Footer';
 import { useRouter } from "next/router";
-import conectarDB from "../../../lib/dbConnect";
-import Empresa from "../../../models/Empresa";
+import conectarDB from "../../../../lib/dbConnect";
+import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
-import s from '../../../styles/container.module.scss';
-import Banner from '../../../src/components/Banner/Banner';
+import s from '../../../../styles/container.module.scss';
+import Banner from '../../../../src/components/Banner/Banner';
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -34,7 +34,7 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                 <div className={s.contentEmpresa}>
                     <div className={s.opcao2}>
-                        <Link href="/">
+                        <Link href="/public/empresa">
                             <a className="btn btn-dark btn-sm me-2">Voltar</a>
                         </Link>
 

@@ -1,7 +1,6 @@
-import { useRouter } from "next/router";
 import { Header } from '../../../../src/components/Header/Header';
 import { Footer } from '../../../../src/components/Footer/Footer';
-
+import { useRouter } from "next/router";
 import conectarDB from "../../../../lib/dbConnect";
 import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
@@ -10,18 +9,9 @@ import Banner from '../../../../src/components/Banner/Banner';
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import { useSession } from 'next-auth/react';
+
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
-
-    //sessão
-    const {data: session } = useSession({
-        required: true
-      });
-    
-      if(!session) {
-        return <></>
-      }
 
     if (!success) {
         return (
@@ -35,17 +25,6 @@ const EmpresaPage = ({ success, error, empresa }) => {
         );
     }
 
-    const deleteData = async (id) => {
-        try {
-            await fetch(`/api/empresa/${id}`, {
-                method: "DELETE",
-            });
-            router.push("/admin");
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
     return (
         <div>
             <header>
@@ -54,19 +33,21 @@ const EmpresaPage = ({ success, error, empresa }) => {
             <div className={s.container}>
 
                 <div className={s.contentEmpresa}>
+                    <div className={s.opcao2}>
+                        <Link href="/public/empresa">
+                            <a className="btn btn-dark btn-sm me-2">Voltar</a>
+                        </Link>
+
+                    </div>
+
                     <div className="card-body">
                         <p className={s.conteudo2}>
                             {empresa.namefantasia}
                         </p>
 
                         <Banner></Banner>
-                        <div className={s.opcao}>
-                            <Link href={`/admin/empresa/${empresa._id}/edit`}>
-                                <   a className="btn btn-warning btn-sg me-2">Editar</a>
-                            </Link>
-                            <button className="btn btn-danger btn-sg" onClick={() => deleteData(empresa._id)}>Excluir</button>
-                            <p></p>
-                        </div>
+                        <p></p>
+
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>
@@ -107,9 +88,6 @@ const EmpresaPage = ({ success, error, empresa }) => {
                                 width="80%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
-                        <Link href="/admin">
-                            <a className="btn btn-dark btn-sm me-2">Voltar</a>
-                        </Link>
                     </div>
                 </div>
             </div>
