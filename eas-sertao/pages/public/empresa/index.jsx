@@ -8,8 +8,11 @@ import Image from 'next/image'
 import comercio1 from '../../../public/static/agroveterinaria.jpg'
 import { BiSearchAlt2 } from "react-icons/bi";
 import ButtonDown from '../../../src/components/ButtonDown/ButtonDown';
+import { useState } from "react";
 
 export default function Home({ empresas }) {
+  const [busca, setBusca] = useState('');
+  
   return (
     <section className='index'>
       <header>
@@ -21,8 +24,10 @@ export default function Home({ empresas }) {
             className={s.pesquisa}
             type="text"
             placeholder="Search"
-            name="pesquisa"
-            id="pesquisa"
+            name="busca"
+            id="busca"
+            value={busca}
+            onChange={(ev)=> setBusca(ev.target.value)}
           />
           <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
           
@@ -30,7 +35,7 @@ export default function Home({ empresas }) {
       <section className={s.container}>
         <div className={s.containerGrid}>
           {
-            empresas.filter(e=>e.pagamento =='true').map(({ _id, namefantasia }) => (
+            empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
               <div className={s.cardEmpresa} key={_id}>
                 <div className={s.cardEmpresaImg}>
                   <Image

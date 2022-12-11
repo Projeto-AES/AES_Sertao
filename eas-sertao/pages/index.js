@@ -15,20 +15,10 @@ export default function Home({ empresas }) {
       </header>
       <div className={s.conteudo2}>
         <Link href={`/public/empresa/`}>
-          <a className="btn btn-success btn-sm">Empresas</a>
+          <a className="btn btn-success btn-lg">Empresas</a>
         </Link>
       </div>
-      <form className={s.busca}>
-        <ButtonDown />
-        <input
-          className={s.pesquisa}
-          type="text"
-          placeholder="Search"
-          name="pesquisa"
-          id="pesquisa"
-        />
-        <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
-      </form>
+      
 
       <div className={s.conteudo2}>
         <div className={s.botao}></div>

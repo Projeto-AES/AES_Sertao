@@ -168,6 +168,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <input className="form-control my-2" type="url" placeholder="Whatsapp" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange}/>
                     <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange}/>
                     <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
+                    <label className="my-3" htmlFor="Data Admissão">Data Admissão</label>
                     <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
                 
                     <button className="btn btn-success w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>

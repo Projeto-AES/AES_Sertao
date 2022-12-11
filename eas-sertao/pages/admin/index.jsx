@@ -10,8 +10,11 @@ import { BiLogOut } from "react-icons/bi";
 
 import { useSession, signIn, signOut } from "next-auth/react"
 
-
+import { BiSearchAlt2 } from "react-icons/bi";
+import { useState } from "react";
 export default function Listar({ empresas }) {
+  const [busca, setBusca] = useState('');
+
   //sessão
   const {data: session } = useSession({
     required: true
@@ -39,10 +42,22 @@ export default function Listar({ empresas }) {
           
         <div>
         </div>
-        
+        <form className={s.busca}>
+          <input
+            className={s.pesquisa}
+            type="text"
+            placeholder="Search"
+            name="busca"
+            id="busca"
+            value={busca}
+            onChange={(ev)=> setBusca(ev.target.value)}
+          />
+          <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
+          
+        </form>
           <div className={s.containerGrid}>
             {
-              empresas.filter(e=>e.pagamento =='true').map(({ _id, namefantasia }) => (
+              empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} key={_id}>
                   <Image
                     src={comercio1}
@@ -58,7 +73,7 @@ export default function Listar({ empresas }) {
               ))
             }
             {
-              empresas.filter(e=>e.pagamento !='true').map(({ _id, namefantasia }) => (
+              empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento != "true").map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} style={{backgroundColor: "rgb(237, 113,104)"}} key={_id}>
                   <Image
                     src={comercio1}
