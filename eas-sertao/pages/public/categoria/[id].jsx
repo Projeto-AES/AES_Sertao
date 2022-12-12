@@ -17,8 +17,10 @@ import { useEffect } from 'react';
 export default function Home({ empresas }) {
   const router = useRouter();
   const parametro = router.query.id;
-  
-const [filtrados,setFiltrados] = useState(empresas);
+
+  const [busca, setBusca] = useState('');
+
+  const [filtrados, setFiltrados] = useState(empresas);
 
   return (
     <section className='index'>
@@ -26,21 +28,24 @@ const [filtrados,setFiltrados] = useState(empresas);
         <Header />
       </header>
       <form className={s.busca}>
-        <ButtonDown />
-        <input
-          className={s.pesquisa}
-          type="text"
-          placeholder="Search"
-          name="pesquisa"
-          id="pesquisa"
-        />
-        <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
-      </form>
+          <ButtonDown/>
+          <input
+            className={s.pesquisa}
+            type="text"
+            placeholder="Search"
+            name="busca"
+            id="busca"
+            value={busca}
+            onChange={(ev)=> setBusca(ev.target.value)}
+          />
+          <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
+        </form>
+
       <section className={s.container}>
         <div className={s.containerGrid}>
-          
+
           {
-            empresas.filter(e=>e.pagamento =='true').map(({ _id, namefantasia }) => (
+            empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
               <div className={s.cardEmpresa} key={_id}>
                 <div className={s.cardEmpresaImg}>
                   <Image
@@ -69,16 +74,14 @@ const [filtrados,setFiltrados] = useState(empresas);
 
 
 export async function getServerSideProps(context) {
- 
+
   try {
     await conectarDB();
 
     const setorDaQuery = context.query.id;
-    
-    const res = await Empresa.find({setor:setorDaQuery});
-    // console.dir(res)
 
-   
+    const res = await Empresa.find({ setor: setorDaQuery });
+    // console.dir(res)
     const empresas = res.map(doc => {
       const empresa = doc.toObject();
       empresa._id = `${empresa._id}`;

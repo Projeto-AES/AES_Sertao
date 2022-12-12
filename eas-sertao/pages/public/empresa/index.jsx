@@ -32,7 +32,9 @@ export default function Home({ empresas }) {
           <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
           
         </form>
+
       <section className={s.container}>
+        
         <div className={s.containerGrid}>
           {
             empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (

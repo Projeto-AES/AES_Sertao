@@ -3,9 +3,10 @@ import { Footer } from '../src/components/Footer/Footer'
 import s from '../styles/container.module.scss'
 import conectarDB from '../lib/dbConnect';
 import Empresa from '../models/Empresa';
-import Link from 'next/link';
 import { BiSearchAlt2 } from "react-icons/bi";
 import ButtonDown from '../src/components/ButtonDown/ButtonDown';
+import Empresas from '../src/components/Empresa/Empresas';
+import Sobre from '../src/components/Sobre/Sobre'
 
 export default function Home({ empresas }) {
   return (
@@ -13,16 +14,29 @@ export default function Home({ empresas }) {
       <header>
         <Header />
       </header>
-      <div className={s.conteudo2}>
-        <Link href={`/public/empresa/`}>
-          <a className="btn btn-success btn-lg">Empresas</a>
-        </Link>
+      <div className={s.divCategoriasEmpresas}>
+        <div>
+          <form className={s.busca}>
+
+            <ButtonDown />
+
+            <input
+              className={s.pesquisa}
+              type="text"
+              placeholder="Search"
+              name="pesquisa"
+              id="pesquisa"
+            />
+            <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
+
+            <Empresas />
+          </form>
+        </div>
       </div>
-      
 
       <div className={s.conteudo2}>
         <div className={s.botao}></div>
-        <p>Texto que o peessoal quer</p>
+        <Sobre />
       </div>
       <section className={s.container}>
         <div className={s.containerGrid}>
