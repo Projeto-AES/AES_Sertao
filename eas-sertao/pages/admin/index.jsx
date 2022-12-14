@@ -15,6 +15,10 @@ import { useState } from "react";
 export default function Listar({ empresas }) {
   const [busca, setBusca] = useState('');
 
+  //ordenação
+  const ordenadas = empresas.sort( (a,b) =>
+  a.namefantasia.localeCompare(b.namefantasia));
+
   //sessão
   const {data: session } = useSession({
     required: true
@@ -29,13 +33,15 @@ export default function Listar({ empresas }) {
       <header>
         <Header />
       </header>
-      <button className={s.out} onClick={() =>{
-                        signOut({redirect: false})
-                    } }>sair<BiLogOut size={35} /></button>
+      
       <section className={s.container}>
         <div>
         
-          <h2 className={s.h2}>Lista de Empresas AES</h2>
+          <h2 className={s.h2}>Lista de Empresas AES 
+          <button className={s.out} onClick={() =>{
+                        signOut({redirect: false})
+                    } }>sair<BiLogOut size={35} /></button>
+          </h2>
           <Link href="/admin/empresa/new">
             <button className={s.cadastro}>Cadastrar Nova Empresa</button>
           </Link>
@@ -57,7 +63,7 @@ export default function Listar({ empresas }) {
         </form>
           <div className={s.containerGrid}>
             {
-              empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
+              ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} key={_id}>
                   <Image
                     src={comercio1}
@@ -73,7 +79,7 @@ export default function Listar({ empresas }) {
               ))
             }
             {
-              empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento != "true").map(({ _id, namefantasia }) => (
+              ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento != "true").map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} style={{backgroundColor: "rgb(237, 113,104)"}} key={_id}>
                   <Image
                     src={comercio1}

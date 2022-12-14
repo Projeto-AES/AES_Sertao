@@ -41,8 +41,8 @@ const Form = ({formData, forNewEmpresa = true}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
 
-        const clean = form.mapa.substring(13, form.mapa.length - 11);
-        form.mapa = clean;
+        //const clean = form.mapa.substring(13, form.mapa.length - 11);
+       // form.mapa = clean;
 
         if(forNewEmpresa){
             postData(form);

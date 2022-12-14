@@ -29,8 +29,9 @@ export default function Home({ empresas }) {
             />
             <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
 
-            <Empresas />
+            
           </form>
+          <Empresas />
         </div>
       </div>
 

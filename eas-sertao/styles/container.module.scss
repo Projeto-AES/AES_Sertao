@@ -220,6 +220,8 @@
 .conteudo3{
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 3px;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -254,6 +256,5 @@
     font-size: 4vh;
     border-radius: 8px;
     float: right;
-    margin-right: 2vh;
-    margin-top: 2vh;
+    
 }

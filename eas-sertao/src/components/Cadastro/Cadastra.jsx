@@ -40,6 +40,10 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        //remover iframe
+        const clean = form.mapa.substring(13, form.mapa.length - 11);
+        form.mapa = clean;
+
         if(forNewEmpresa){
             postData(form);
         }else{
@@ -128,7 +132,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <label className="my-3" htmlFor="Setor">Setor/Categoria</label>
                     <select name="setor" value={form.setor} onChange={handleChange}>
                         <option value="" disabled selected>Selecione a categoria</option>
-                        <option value="agropecuaria">Agropecuaria</option>
+                        <option value="agropecuária">Agropecuária</option>
                         <option value="agricola">Agrícola</option>
                         <option value="automotivo">Automotivo</option>
                         <option value="autoeletrica">Auto Eletrica</option>

@@ -12,7 +12,11 @@ import { useState } from "react";
 
 export default function Home({ empresas }) {
   const [busca, setBusca] = useState('');
-  
+
+  //ordenação
+  const ordenadas = empresas.sort( (a,b) => 
+  a.namefantasia.localeCompare(b.namefantasia));
+
   return (
     <section className='index'>
       <header>
@@ -37,7 +41,7 @@ export default function Home({ empresas }) {
         
         <div className={s.containerGrid}>
           {
-            empresas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
+            ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
               <div className={s.cardEmpresa} key={_id}>
                 <div className={s.cardEmpresaImg}>
                   <Image

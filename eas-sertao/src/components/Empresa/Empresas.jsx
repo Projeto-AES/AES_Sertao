@@ -5,7 +5,7 @@ function Empresas() {
   return (
     <div className={s.conteudo3}>
         <Link href={`/public/empresa/`}>
-          <a className="btn btn-success ">Empresas</a>
+          <a className="btn btn-success btn-lg">Empresas</a>
         </Link>
       </div>
   );
