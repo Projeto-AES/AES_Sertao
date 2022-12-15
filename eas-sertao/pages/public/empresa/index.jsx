@@ -17,13 +17,14 @@ export default function Home({ empresas }) {
   const ordenadas = empresas.sort( (a,b) => 
   a.namefantasia.localeCompare(b.namefantasia));
 
+
   return (
     <section className='index'>
       <header>
         <Header />
       </header>
         <form className={s.busca}>
-          <ButtonDown/>
+        <ButtonDown/>
           <input
             className={s.pesquisa}
             type="text"
@@ -37,9 +38,12 @@ export default function Home({ empresas }) {
           
         </form>
 
-      <section className={s.container}>
-        
+      <section className={s.container8}>
+      
+      
         <div className={s.containerGrid}>
+           
+          
           {
             ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
               <div className={s.cardEmpresa} key={_id}>
@@ -57,6 +61,7 @@ export default function Home({ empresas }) {
                 </div>
               </div>
             ))
+            
           }
         </div>
       </section>

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { Header } from '../../../../src/components/Header/Header';
 import { Footer } from '../../../../src/components/Footer/Footer';
-
+import Image from 'next/image';
 import conectarDB from "../../../../lib/dbConnect";
 import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
@@ -70,6 +70,11 @@ const EmpresaPage = ({ success, error, empresa }) => {
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>
+
+                        <img
+                        src={empresa.url}
+                        //layout='fill'
+                        />
 
                         <p className={s.conteudo}>
                             <b> Setor:</b> {empresa.setor}

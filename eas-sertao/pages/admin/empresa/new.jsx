@@ -5,13 +5,13 @@ import s from '../../../styles/container.module.scss'
 import { useSession } from 'next-auth/react';
 const New = () => {
     //sessão
-    const {data: session } = useSession({
+    const { data: session } = useSession({
         required: true
-      });
-    
-      if(!session) {
+    });
+
+    if (!session) {
         return <></>
-      }
+    }
     const formData = {
         numerosocio: "",
         cnpj: "",
@@ -24,6 +24,7 @@ const New = () => {
         responsavel: "",
         setor: "",
         pagamento: "",
+        url: "",
         instagram: "",
         facebook: "",
         whatsapp: "",
@@ -36,11 +37,11 @@ const New = () => {
     return (
         <div >
             <Header />
-            <div className="container">
-            <h2 className={s.h2}>Adiciconar Nova Empresa</h2>
+            <div className="container" style={{ backgroundColor: "#f1f1f1", borderRadius: "10px", padding: "20px" }}>
+                <h2 className={s.h2}>Adiciconar Nova Empresa</h2>
                 <Form formData={formData} />
             </div>
-        <Footer/>
+            <Footer />
         </div>
     );
 }

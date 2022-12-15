@@ -40,7 +40,7 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                     </div>
 
-                    <div className="card-body">
+                    <div>
                         <p className={s.conteudo2}>
                             {empresa.namefantasia}
                         </p>

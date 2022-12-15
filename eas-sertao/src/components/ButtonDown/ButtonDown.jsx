@@ -2,13 +2,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
  function ButtonDown() {
 
   return (
-    <Dropdown>
+    <Dropdown >
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Categorias
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-      <Dropdown.Item href="/public/empresa"><b>Mostrar todas</b></Dropdown.Item>
+      <Dropdown.Menu  >
+        <Dropdown.Item  href="/public/empresa"><b>Mostrar todas</b></Dropdown.Item>
         <Dropdown.Item href="/public/categoria/agropecuária">Agropecuaria</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/agricola">Agrícola</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/automotivo">Automotivo</Dropdown.Item>

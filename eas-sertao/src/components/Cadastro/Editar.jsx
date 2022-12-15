@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
+import s from '../../../styles/container.module.scss'
 
 const Form = ({formData, forNewEmpresa = true}) => {
 
@@ -115,8 +116,8 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
 
     return(
-        <div>
-            <div>
+        <div >
+            <div >
                 <form onSubmit={handleSubmit}>
                     <input className="form-control my-2" type="number" placeholder="Número Sócio" autoComplete="off" name="numerosocio" required value={form.numerosocio} onChange={handleChange}/>
                     <input className="form-control my-2" type="number" placeholder="CNPJ" autoComplete="off" name="cnpj" required value={form.cnpj} onChange={handleChange}/>
@@ -130,7 +131,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     <input className="form-control my-2" type="text" placeholder="Responsável" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange}/>
 
                     <label className="my-3" htmlFor="Setor">Setor/Categoria</label>
-                    <select name="setor" value={form.setor} onChange={handleChange}>
+                    <select className={s.setor} name="setor" value={form.setor} onChange={handleChange}>
                         <option value="" disabled selected>Selecione a categoria</option>
                         <option value="agropecuaria">Agropecuaria</option>
                         <option value="agricola">Agrícola</option>
@@ -160,7 +161,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
                     </select>
                     <br/>
                     <label className="my-3" htmlFor="Setor">Situação Cadastral</label>
-                    <select name="pagamento" value={form.pagamento} onChange={handleChange}>
+                    <select className={s.pagamento} name="pagamento" value={form.pagamento} onChange={handleChange}>
                         <option value="" disabled selected>Selecione  o PAGAMENTO</option>
                         <option value="true">PAGO</option>
                         <option value="false">Não PAGO</option>

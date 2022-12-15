@@ -35,12 +35,12 @@ export default function Listar({ empresas }) {
       </header>
       
       <section className={s.container}>
-        <div>
+        <div className={s.admin}>
         
           <h2 className={s.h2}>Lista de Empresas AES 
           <button className={s.out} onClick={() =>{
                         signOut({redirect: false})
-                    } }>sair<BiLogOut size={35} /></button>
+                    } }>SAIR<BiLogOut  size={35} /></button>
           </h2>
           <Link href="/admin/empresa/new">
             <button className={s.cadastro}>Cadastrar Nova Empresa</button>

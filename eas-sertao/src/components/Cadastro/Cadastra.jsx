@@ -1,11 +1,15 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
+import { CldUploadButton } from 'next-cloudinary';
+import Cookies from 'js-cookie';
 
-const Form = ({formData, forNewEmpresa = true}) => {
+const Form = ({ formData, forNewEmpresa = true }) => {
+    const [url, setUrl] = useState();
 
     const router = useRouter();
-
+    const urlPronta = Cookies.get('url');
+    
     const [form, setForm] = useState({
         numerosocio: formData.numerosocio,
         cnpj: formData.cnpj,
@@ -19,6 +23,7 @@ const Form = ({formData, forNewEmpresa = true}) => {
         responsavel: formData.responsavel,
         setor: formData.setor,
         pagamento: formData.pagamento,
+        url: formData.url,
         instagram: formData.instagram,
         facebook: formData.facebook,
         whatsapp: formData.whatsapp,
@@ -36,45 +41,46 @@ const Form = ({formData, forNewEmpresa = true}) => {
             [name]: value,
         });
     };
-    
 
-    const handleSubmit = (e) =>{
+
+    const handleSubmit = (e) => {
         e.preventDefault();
         //remover iframe
         const clean = form.mapa.substring(13, form.mapa.length - 11);
         form.mapa = clean;
 
-        if(forNewEmpresa){
+        if (forNewEmpresa) {
             postData(form);
-        }else{
+        } else {
             putData(form);
-        } 
+        }
     };
-
+    
     const putData = async (form) => {
         setMenssage([]);
-        const {id} = router.query;
+        const { id } = router.query;
         try {
             const res = await fetch(`/api/empresa/${id}`, {
-                 method: "PUT",
-                 headers: {
-                      "Content-type": "application/json",
-                  },
-                   body: JSON.stringify(form),
-              });
+                method: "PUT",
+                headers: {
+                    "Content-type": "application/json",
+                    
+                },
+                body: JSON.stringify(form),
+            });
 
-             const data = await res.json();
-             console.log(data);
-
-             if(!data.success){
-                 for (const key in data.error.errors) {
-                       let error = data.error.errors[key]
-                      setMenssage(oldmenssage => [
-                          ...oldmenssage,
-                         {message: error.message},
-                      ]);
-                   }
-             }else{
+            const data = await res.json();
+            console.log(data);
+            
+            if (!data.success) {
+                for (const key in data.error.errors) {
+                    let error = data.error.errors[key]
+                    setMenssage(oldmenssage => [
+                        ...oldmenssage,
+                        { message: error.message },
+                    ]);
+                }
+            } else {
                 setMenssage([]);
                 router.push("/admin");
             }
@@ -86,48 +92,50 @@ const Form = ({formData, forNewEmpresa = true}) => {
     const postData = async () => {
         try {
             console.log(form);
-                const res = await fetch("/api/empresa", {
-                    method: "POST",
-                    headers: {
-                        "Content-type": "application/json",
-                    },
-                    body: JSON.stringify(form),
-                });
+            const res = await fetch("/api/empresa", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
 
-                const data = await res.json();
-                console.log(data);
-
-                if(!data.success){
-                    for (const key in data.error.errors) {
-                        let error = data.error.errors[key]
-                        setMenssage(oldmenssage => [
-                            ...oldmenssage,
-                            {message: error.message},
-                        ]);
-                    }
-                }else{
-                    router.push("/admin");
+            const data = await res.json();
+            console.log(data);
+            console.log(url)
+            if (!data.success) {
+                for (const key in data.error.errors) {
+                    let error = data.error.errors[key]
+                    setMenssage(oldmenssage => [
+                        ...oldmenssage,
+                        { message: error.message },
+                    ]);
                 }
+            } else {
+                router.push("/admin");
+            }
         } catch (error) {
             console.log(error);
         }
     };
-
-
-    return(
+    
+    
+    return (
         <div>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <input className="form-control my-2" type="number" placeholder="Número Sócio" autoComplete="off" name="numerosocio" required value={form.numerosocio} onChange={handleChange}/>
-                    <input className="form-control my-2" type="number" placeholder="CNPJ" autoComplete="off" name="cnpj" required value={form.cnpj} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Nome Jurídico" autoComplete="off" name="namejuridico" required value={form.namejuridico} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Nome Fantasia" autoComplete="off" name="namefantasia" required value={form.namefantasia} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Endereço" autoComplete="off" name="endereco" required value={form.endereco} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Email" autoComplete="off" name="email" required value={form.email} onChange={handleChange}/>
-                    <input className="form-control my-2" type="tel" placeholder="Telefone Fixo" autoComplete="off" name="telefonefixo" required value={form.telefonefixo} onChange={handleChange}/>
-                    <input className="form-control my-2" type="tel" placeholder="Telefone Celular" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Tipo Pessoa" autoComplete="off" name="tipopessoa" required value={form.tipopessoa} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Responsável" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange}/>
+                    <input className="form-control my-2" type="number" placeholder="Número Sócio" autoComplete="off" name="numerosocio" required value={form.numerosocio} onChange={handleChange} />
+                    <input className="form-control my-2" type="number" placeholder="CNPJ" autoComplete="off" name="cnpj" required value={form.cnpj} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Nome Jurídico" autoComplete="off" name="namejuridico" required value={form.namejuridico} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Nome Fantasia" autoComplete="off" name="namefantasia" required value={form.namefantasia} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Endereço" autoComplete="off" name="endereco" required value={form.endereco} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Email" autoComplete="off" name="email" required value={form.email} onChange={handleChange} />
+                    <input className="form-control my-2" type="tel" placeholder="Telefone Fixo" autoComplete="off" name="telefonefixo" required value={form.telefonefixo} onChange={handleChange} />
+                    <input className="form-control my-2" type="tel" placeholder="Telefone Celular" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange} />
+                    
+                    <input className="form-control my-2" type="text" placeholder="Tipo Pessoa" autoComplete="off" name="tipopessoa" required value={form.tipopessoa} onChange={handleChange} />
+
+                    <input className="form-control my-2" type="text" placeholder="Responsável" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange} />
 
                     <label className="my-3" htmlFor="Setor">Setor/Categoria</label>
                     <select name="setor" value={form.setor} onChange={handleChange}>
@@ -159,22 +167,31 @@ const Form = ({formData, forNewEmpresa = true}) => {
 
                     </select>
 
-                    <br/>
+                    <br />
                     <label className="my-3" htmlFor="Setor">Situação Cadastral</label>
                     <select name="pagamento" value={form.pagamento} onChange={handleChange}>
                         <option value="" disabled selected>Selecione  o PAGAMENTO</option>
                         <option value="true">PAGO</option>
                         <option value="false">Não PAGO</option>
                     </select>
+
+
+                    <CldUploadButton uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
+                        setUrl(result.info.url)
+                        console.log(url)
+                        Cookies.set('url',url);
+                    }} />
                     
-                    <input className="form-control my-2" type="url" placeholder="Instagram" autoComplete="off" name="instagram" value={form.instagram} onChange={handleChange}/>
-                    <input className="form-control my-2" type="url" placeholder="Facebook" autoComplete="off" name="facebook" value={form.facebook} onChange={handleChange}/>
-                    <input className="form-control my-2" type="url" placeholder="Whatsapp" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange}/>
-                    <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange}/>
-                    <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange}/>
+                    
+
+                    <input className="form-control my-2" type="url" placeholder="Instagram" autoComplete="off" name="instagram" value={form.instagram} onChange={handleChange} />
+                    <input className="form-control my-2" type="url" placeholder="Facebook" autoComplete="off" name="facebook" value={form.facebook} onChange={handleChange} />
+                    <input className="form-control my-2" type="url" placeholder="Whatsapp" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Localização" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange} />
+                    <input className="form-control my-2" type="number" placeholder="Inscrição estadual" autoComplete="off" name="inscricaoestadual" required value={form.inscricaoestadual} onChange={handleChange} />
                     <label className="my-3" htmlFor="Data Admissão">Data Admissão</label>
-                    <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange}/>
-                
+                    <input className="form-control my-2" type="date" placeholder="Data Admissão" autoComplete="off" name="dataadmissao" required value={form.dataadmissao} onChange={handleChange} />
+
                     <button className="btn btn-success w-100" type="submit">{forNewEmpresa ? "Enviar" : "Editar"}</button>
                     <Link href="/admin">
                         <a className="btn btn-danger w-100 my-2">Cancelar</a>
