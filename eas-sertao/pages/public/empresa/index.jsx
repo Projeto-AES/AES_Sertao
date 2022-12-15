@@ -52,6 +52,7 @@ export default function Home({ empresas }) {
                     src={comercio1}
                     alt="Picture do comercio"
                   />
+                  
                 </div>
                 <h2 className={s.titleCard}>{namefantasia}</h2>
                 <div className="text-center">

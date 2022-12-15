@@ -16,54 +16,69 @@ export default function Listar({ empresas }) {
   const [busca, setBusca] = useState('');
 
   //ordenação
-  const ordenadas = empresas.sort( (a,b) =>
-  a.namefantasia.localeCompare(b.namefantasia));
+  const ordenadas = empresas.sort((a, b) =>
+    a.namefantasia.localeCompare(b.namefantasia));
 
   //sessão
-  const {data: session } = useSession({
+  const { data: session } = useSession({
     required: true
   });
 
-  if(!session) {
+  if (!session) {
     return <></>
   }
-  
+
   return (
     <section className='index'>
       <header>
         <Header />
       </header>
-      
+{/* botao Sair*/}
+<div className={s.sair}>
+            <button className={s.out} onClick={() => {
+              signOut({ redirect: false })
+            }}>SAIR<BiLogOut size={35} /></button>
+          </div>
       <section className={s.container}>
-        <div className={s.admin}>
-        
-          <h2 className={s.h2}>Lista de Empresas AES 
-          <button className={s.out} onClick={() =>{
-                        signOut({redirect: false})
-                    } }>SAIR<BiLogOut  size={35} /></button>
-          </h2>
+        {/* botao cadastro de empresa*/}
+        <div className={s.botaoADM}>
           <Link href="/admin/empresa/new">
             <button className={s.cadastro}>Cadastrar Nova Empresa</button>
           </Link>
-          
-        <div>
         </div>
-        <form className={s.busca}>
-          <input
-            className={s.pesquisa}
-            type="text"
-            placeholder="Search"
-            name="busca"
-            id="busca"
-            value={busca}
-            onChange={(ev)=> setBusca(ev.target.value)}
-          />
-          <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
-          
-        </form>
+        {/* botao Turoriais*/}
+        <div className={s.botaoADM}>
+          <Link href="/admin/help/">
+            <button className={s.cadastro}>Ajuda / Tutoriais</button>
+          </Link>
+        </div>
+        {/* botao Editar Banner*/}
+        <div className={s.botaoADM}>
+          <Link href="/admin/banner">
+            <button className={s.cadastro}>Editar Banner</button>
+          </Link>
+        </div>
+
+        <div className={s.admin}>
+
+            
+
+          <form className={s.busca}>
+            <input
+              className={s.pesquisa}
+              type="text"
+              placeholder="Search"
+              name="busca"
+              id="busca"
+              value={busca}
+              onChange={(ev) => setBusca(ev.target.value)}
+            />
+            <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
+
+          </form>
           <div className={s.containerGrid}>
             {
-              ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
+              ordenadas.filter(e => e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
                 <div className={s.cardEmpresa} key={_id}>
                   <Image
                     src={comercio1}
@@ -79,8 +94,8 @@ export default function Listar({ empresas }) {
               ))
             }
             {
-              ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento != "true").map(({ _id, namefantasia }) => (
-                <div className={s.cardEmpresa} style={{backgroundColor: "rgb(237, 113,104)"}} key={_id}>
+              ordenadas.filter(e => e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento != "true").map(({ _id, namefantasia }) => (
+                <div className={s.cardEmpresa} style={{ backgroundColor: "rgb(237, 113,104)" }} key={_id}>
                   <Image
                     src={comercio1}
                     alt="Picture do comercio"
@@ -94,7 +109,7 @@ export default function Listar({ empresas }) {
                 </div>
               ))
             }
-            
+
           </div>
         </div>
 

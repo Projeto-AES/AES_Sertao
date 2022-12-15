@@ -47,7 +47,11 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                         <Banner></Banner>
                         <p></p>
-
+                        <img
+                        src={empresa.url}
+                        //layout='fill'
+                        
+                        />
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>

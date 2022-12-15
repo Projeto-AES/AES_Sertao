@@ -188,8 +188,8 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                         <option value="true">PAGO</option>
                         <option value="false">Não PAGO</option>
                     </select>
-
-
+                    <br />
+                    <br />
                     <CldUploadButton uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl(result.info.url)
                         console.log(url)

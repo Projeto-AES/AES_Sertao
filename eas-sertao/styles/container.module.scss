@@ -6,6 +6,7 @@
     align-items: center;
     background-color: #f1f1f6;
     margin-bottom: 120px;
+    
 }
 
 .containerGrid{
@@ -19,6 +20,7 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
 
 
 
@@ -45,14 +47,7 @@
     // }
 }
 
-.cardEmpresaImg{
-    height: 140px;
 
-    img{
-        object-fit: contain;
-        max-height: 140px;
-    }
-}
 
 .contentEmpresa{
     text-align: center;
@@ -136,6 +131,54 @@
     background-color: #f1f1f6;
     margin-bottom: 120px;
     z-index: 1000;
+}
+.container9{
+    min-height: 650px;
+    display:flex;
+    flex-direction: column;
+    padding-top: 100px;
+    background-color: #f1f1f6;
+    margin-bottom: 80px;
+    z-index: 1000;
+    
+}
+
+.lista{
+display: flex;
+background-color: #fff;
+margin: 10px 0px 10px 0px;
+padding-top: 20px;
+border-radius: 10px;
+height: auto;
+padding-bottom: 20px;
+}
+
+.listaconteudo{
+    text-align: center;
+}
+.listaimagem{
+    padding-left: 15px;
+}
+.lista3{
+    margin-left: auto;
+    padding-right: 15px;
+}
+
+.containerList{
+    display: flex;
+    flex-direction:column;
+    margin-left: 30%;
+    margin-right: 30%;
+
+}
+
+.cardEmpresaImg{
+    height: 140px;
+
+    img{
+        object-fit: contain;
+        max-height: 140px;
+    }
 }
 
 
@@ -246,15 +289,27 @@
 }
 
 .out{
-    font-size: 4vh;
+    font-size: 3vh;
     border-radius: 8px;
-    float: right;
     
 }
 
 .admin{
+    
     min-width: 870px;
     
+}
+.botaoADM{
+    margin-top: 20px;
+}
+
+.botaoADM button{
+    display: flex;
+    width: auto;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    margin: 0;
 }
 
 .lab_inputs{
@@ -263,7 +318,15 @@
     margin-top: 1vh;
 }
 
+
+
 .obg{
     color: red;
     font-size: 2.7vh;
+}
+
+.sair{
+    display: flex;
+    justify-content: end;
+    
 }
