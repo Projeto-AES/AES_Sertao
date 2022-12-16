@@ -2,18 +2,41 @@ import { Header } from '../src/components/Header/Header'
 import { Footer } from '../src/components/Footer/Footer'
 import s from '../styles/container.module.scss'
 import conectarDB from '../lib/dbConnect';
-import Empresa from '../models/Empresa';
+import Banner from '../models/Banner';
 import { BiSearchAlt2 } from "react-icons/bi";
 import ButtonDown from '../src/components/ButtonDown/ButtonDown';
 import Empresas from '../src/components/Empresa/Empresas';
 import Sobre from '../src/components/Sobre/Sobre'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
-export default function Home({ empresas }) {
+export default function Home({ banners }) {
   return (
     <section className='index'>
       <header>
         <Header />
       </header>
+
+      <div>
+        <div class="carousel-wrapper">
+          <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
+            {
+              banners.map(({ _id, url, link }) => (
+                <div className="text-center" key={_id}>
+                  
+                    <div className={s.banner}>
+                      <img src={url} />
+                    </div>
+                  
+
+                </div>
+              ))
+            }
+          </Carousel>
+        </div>
+      </div>
+
+
       <div className={s.divCategoriasEmpresas}>
         <div>
           <form className={s.busca}>
@@ -26,9 +49,9 @@ export default function Home({ empresas }) {
               id="pesquisa"
             />
             <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
-
+            <Empresas />
           </form>
-          <Empresas />
+
         </div>
       </div>
 
@@ -37,9 +60,9 @@ export default function Home({ empresas }) {
         <Sobre />
       </div>
       <div className={s.containerGrid}>
-      <br/>
-      <br/>
-      <br/>
+        <br />
+        <br />
+        <br />
       </div>
       <footer>
         <Footer />
@@ -49,19 +72,21 @@ export default function Home({ empresas }) {
 }
 
 export async function getServerSideProps() {
+
   try {
     await conectarDB()
 
-    const res = await Empresa.find({});
+    const res = await Banner.find({});
 
-    const empresas = res.map(doc => {
-      const empresa = doc.toObject();
-      empresa._id = `${empresa._id}`;
-      return empresa;
+    const banners = res.map(doc => {
+      const banner = doc.toObject();
+      banner._id = `${banner._id}`;
+      return banner;
     })
 
-    return { props: { empresas } };
+    return { props: { banners } };
   } catch (error) {
     console.log(error);
   }
+
 }

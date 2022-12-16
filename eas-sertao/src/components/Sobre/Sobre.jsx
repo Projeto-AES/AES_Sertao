@@ -2,13 +2,11 @@ import Card from 'react-bootstrap/Card';
 import s from "./Sobre.module.scss";
 import AES from "../../../public/static/img-aes.jpg"
 import Image from 'next/image';
-import Banner from '../Banner/BannerIndex';
 
 export const Sobre = () => {
     return (
         <div>
             <Card className={s.divCard}>
-            <Banner></Banner>
             <Image src={AES} alt="aes" className={s.imgAES}/>
              <h2 className={s.missao}>Missão AES</h2>
              <p className={s.missaoTxt}>

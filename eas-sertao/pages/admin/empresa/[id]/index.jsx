@@ -1,32 +1,29 @@
 import { useRouter } from "next/router";
 import { Header } from '../../../../src/components/Header/Header';
 import { Footer } from '../../../../src/components/Footer/Footer';
-import Image from 'next/image';
 import conectarDB from "../../../../lib/dbConnect";
 import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
 import s from '../../../../styles/container.module.scss';
-import Banner from '../../../../src/components/Banner/Banner';
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useSession } from 'next-auth/react';
-
-
-import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import React, { Component } from 'react';
+
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
 
     //sessão
-    const {data: session } = useSession({
+    const { data: session } = useSession({
         required: true
-      });
-    
-      if(!session) {
+    });
+
+    if (!session) {
         return <></>
-      }
+    }
 
     if (!success) {
         return (
@@ -66,20 +63,19 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
 
                         <div>
-              
-                        <div class="carousel-wrapper">
-            <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
-                <div>
-                    <img src={empresa.url}/>
-                </div>
-                <div>
-                    <img src={empresa.url2} />
-                </div>
-                
-            </Carousel>
-        </div>
-            </div>
-                        
+                            <div class="carousel-wrapper">
+                                <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
+                                    <div>
+                                        <img src={empresa.url} />
+                                    </div>
+                                    <div>
+                                        <img src={empresa.url2} />
+                                    </div>
+
+                                </Carousel>
+                            </div>
+                        </div>
+
                         <div className={s.opcao}>
                             <Link href={`/admin/empresa/${empresa._id}/edit`}>
                                 <   a className="btn btn-warning btn-sg me-2">Editar</a>
@@ -108,20 +104,20 @@ const EmpresaPage = ({ success, error, empresa }) => {
                             <b>  Endereço:</b> {empresa.endereco}
                         </p>
                         <div className={s.soc}>
-                        {empresa.instagram.length !=0 ?
-                         <Link href={empresa.instagram}>
-                                <RiInstagramFill className={s.ico2} />
-                            </Link> : ''}
-                            
-                        {empresa.facebook.length !=0 ?
-                        <Link href={empresa.facebook}>
-                                <FaFacebookSquare className={s.ico2} />
-                            </Link> : ''}
+                            {empresa.instagram.length != 0 ?
+                                <Link href={empresa.instagram}>
+                                    <RiInstagramFill className={s.ico2} />
+                                </Link> : ''}
 
-                        {empresa.whatsapp.length !=0 ?
-                            <Link href={empresa.whatsapp}>
-                                <IoLogoWhatsapp className={s.ico2} />
-                            </Link> : ''}
+                            {empresa.facebook.length != 0 ?
+                                <Link href={empresa.facebook}>
+                                    <FaFacebookSquare className={s.ico2} />
+                                </Link> : ''}
+
+                            {empresa.whatsapp.length != 0 ?
+                                <Link href={empresa.whatsapp}>
+                                    <IoLogoWhatsapp className={s.ico2} />
+                                </Link> : ''}
                         </div>
                         <div>
                             <iframe src={empresa.mapa}

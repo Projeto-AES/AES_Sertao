@@ -97,7 +97,7 @@ const Form = ({ formData, forNewBanner = true }) => {
                     ]);
                 }
             } else {
-                router.push("/admin");
+                router.push("/admin/banner");
             }
         } catch (error) {
             console.log(error);

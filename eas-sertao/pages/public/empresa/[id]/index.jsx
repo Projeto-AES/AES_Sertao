@@ -5,7 +5,7 @@ import conectarDB from "../../../../lib/dbConnect";
 import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
 import s from '../../../../styles/container.module.scss';
-import Banner from '../../../../src/components/Banner/Banner';
+
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";

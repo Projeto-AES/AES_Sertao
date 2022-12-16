@@ -78,11 +78,12 @@ export default function Listar({ empresas }) {
           </form>
           <div className={s.containerGrid}>
             {
-              ordenadas.filter(e => e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
+              ordenadas.filter(e => e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia, url }) => (
                 <div className={s.cardEmpresa} key={_id}>
-                  <Image
-                    src={comercio1}
-                    alt="Picture do comercio"
+                  <img
+                    src={url}
+                    width="240px"
+                    height="130px"
                   />
                   <h2 className="fw-normal text-center">{namefantasia}</h2>
                   <div className="text-center">
