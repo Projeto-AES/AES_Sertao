@@ -51,10 +51,10 @@ const EmpresaPage = ({ success, error, empresa }) => {
         <div class="carousel-wrapper">
             <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
                 <div>
-                    <img src={empresa.url}/>
+                    <img className={s.imgEmpresa} src={empresa.url}/>
                 </div>
                 <div>
-                    <img src={empresa.url2} />
+                    <img className={s.imgEmpresa} src={empresa.url2} />
                 </div>
             </Carousel>
         </div>

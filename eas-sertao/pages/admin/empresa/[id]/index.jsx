@@ -56,6 +56,12 @@ const EmpresaPage = ({ success, error, empresa }) => {
             <div className={s.container}>
 
                 <div className={s.contentEmpresa}>
+                <div className={s.opcao2}>
+                        <Link href="/admin">
+                            <a className="btn btn-dark btn-sm me-2">Voltar</a>
+                        </Link>
+
+                    </div>
                     <div className="card-body">
                         <p className={s.conteudo2}>
                             {empresa.namefantasia}
@@ -64,12 +70,12 @@ const EmpresaPage = ({ success, error, empresa }) => {
 
                         <div>
                             <div class="carousel-wrapper">
-                                <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
-                                    <div>
-                                        <img src={empresa.url} />
+                                <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime className={s.imgEmpresa}>
+                                    <div >
+                                        <img className={s.imgEmpresa} src={empresa.url} />
                                     </div>
                                     <div>
-                                        <img src={empresa.url2} />
+                                        <img className={s.imgEmpresa} src={empresa.url2} />
                                     </div>
 
                                 </Carousel>
