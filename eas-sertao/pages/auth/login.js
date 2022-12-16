@@ -44,6 +44,7 @@ const New3 = () => {
     <>
    <main>
         <div className="imag">
+                <a className="btn btn-dark btn-sm me-2" onClick={()=>window.history.back()}>Voltar</a>
           <form className="formin" onSubmit={handleSubmit(handleFormSubmit)}>
           <Link href="/">
             <FaUserCircle className="l1"  />

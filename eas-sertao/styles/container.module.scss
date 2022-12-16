@@ -21,46 +21,21 @@
     }
 }
 
-
-
-
-.cardEmpresa{
-    text-align: center;
-    width: 290px;
-    margin: 0 auto;
-    padding: 20px 20px 25px 20px;
-    box-shadow: 0px 1px 1px #C7C7CC;
-    border-radius: 8px;
-    background-color: #fff;
-    margin: 30px;
-
-    font-size: clamp(1rem, -0.875rem + 3.33vw, 3rem);
-    // @include h.min-md{
-    //     width: 310px;
-    //     margin: 0 auto;
-    // }
-
-    // @media (min-width: 768px) {
-    //     width: 228px;
-    //     height: 391px;
-    //     padding-top: 8px;
-    // }
-}
-
-
-
 .contentEmpresa{
     text-align: center;
-    width: 80%;
+    width: 100%;
+    max-width: 750px;
     margin: 0 auto;
-    padding: 20px 20px 25px 20px;
     box-shadow: 0px 1px 1px #C7C7CC;
     border-radius: 8px;
     background-color: #fff;
     margin: 30px;
     min-height: 5vh;
     font-size: clamp(1.3rem, 1.8vw, 1.5rem);
+
+    @media (min-width: 768px) {padding: 20px 20px 25px 20px;}
 }
+
 .busca1{
     display: flex;
     align-self: stretch;
@@ -69,26 +44,13 @@
     margin: 0 auto;
     margin-top: 2vh;
     display: flex;
-    
-    
 }
 
 .titleCard{
     text-align: center;
-    margin-top: 0.5rem;
     font-weight: 400;
 }
 
-.pesquisa{
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 6px;
-    border-end-start-radius: 6px;
-    border-start-start-radius: 6px;
-    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
-    border-right: none;
-    width: 600px ;
-    margin-left: 3px;
-}
 .but{
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -134,17 +96,15 @@
 }
 .container9{
     min-height: 650px;
-    display:flex;
-    flex-direction: column;
-    padding-top: 100px;
+    // display:flex;
+    // flex-direction: column;
+    padding: 90px 0;
     background-color: #f1f1f6;
-    margin-bottom: 80px;
+    // padding-bottom: 80px;
     z-index: 1000;
-    
 }
 
 .lista{
-display: flex;
 background-color: #fff;
 margin: 10px 0px 10px 0px;
 padding-top: 20px;
@@ -157,27 +117,22 @@ padding-bottom: 20px;
     text-align: center;
 }
 .listaimagem{
-    padding-left: 15px;
-}
-.lista3{
-    margin-left: auto;
-    padding-right: 15px;
+    margin:0 15px;
+    border:1px solid #36404b
 }
 
 .containerList{
     display: flex;
     flex-direction:column;
-    margin-left: 30%;
-    margin-right: 30%;
-
+    align-items: center;
 }
 
 .cardEmpresaImg{
-    height: 140px;
+    height: 180px;
 
     img{
         object-fit: contain;
-        max-height: 140px;
+        max-height: 180px;
     }
 }
 
@@ -186,27 +141,13 @@ padding-bottom: 20px;
     text-align: center;
     width: 350px;
     margin: 0 auto;
-    padding: 20px 20px 25px 20px;
-    box-shadow: 0px 1px 1px #C7C7CC;
+    padding: 20px 0px 20px 0px;
+    box-shadow: 0px 3px 4px 1px #c7c7cc;
     border-radius: 8px;
     background-color: #fff;
     margin: 30px;
 
     font-size: clamp(1rem, -0.875rem + 3.33vw, 3rem);
-    
-}
-
-.contentEmpresa{
-    text-align: center;
-    width: 65%;
-    margin: 0 auto;
-    padding: 20px 20px 25px 20px;
-    box-shadow: 0px 1px 1px #C7C7CC;
-    border-radius: 8px;
-    background-color: #fff;
-    margin: 30px;
-    min-height: 5vh;
-    font-size: clamp(1.3rem, 1.8vw, 1.5rem);
 }
 
 .busca{
@@ -222,13 +163,29 @@ padding-bottom: 20px;
     border-start-start-radius: 6px;
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
     border-right: none;
-    width: 100%;
-    max-width: 400px;
+    width: 70%;
 }
 
 .h2 {
     margin-top: 50px !important;
     color: #36404b !important;
+}
+
+.sobreBtn{
+    padding: 6px 12px;
+    background-color: #198754;
+    color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 2px;
+    &:hover{
+        font-size: 19px;
+        padding: 6px 33px;
+        transition-duration: 1s;
+        color: #f5f5f5;
+    }
 }
 
 .cadastro {
@@ -245,6 +202,26 @@ padding-bottom: 20px;
     text-align: left;
     padding-left: 2%;
     font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+}
+
+.boxBtn{
+    display: flex;
+    flex-direction: column;
+    // margin: 20px auto;
+    // max-width: 80%;
+}
+
+#indexBtn{
+    width: 320px;
+    margin: 5px;
+    background-color: red !important;
+}
+.indexBtn{
+    width: 320px;
+    font-size: 1.25rem;
+    margin: 5px;
+    height: 48px;
+    background-color: red !important;
 }
 
 .conteudo2{
@@ -289,16 +266,11 @@ padding-bottom: 20px;
 }
 
 .out{
-    font-size: 3vh;
+    font-size: 15;
     border-radius: 8px;
     
 }
 
-.admin{
-    
-    min-width: 870px;
-    
-}
 .botaoADM{
     margin-top: 20px;
 }

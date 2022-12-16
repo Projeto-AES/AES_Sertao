@@ -37,7 +37,7 @@ export default function Listar({ empresas }) {
 <div className={s.sair}>
             <button className={s.out} onClick={() => {
               signOut({ redirect: false })
-            }}>SAIR<BiLogOut size={35} /></button>
+            }}>SAIR<BiLogOut size={25} /></button>
           </div>
       <section className={s.container}>
         {/* botao cadastro de empresa*/}
@@ -87,7 +87,7 @@ export default function Listar({ empresas }) {
                   <h2 className="fw-normal text-center">{namefantasia}</h2>
                   <div className="text-center">
                     <Link href={`/admin/empresa/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
+                    <a className={s.sobreBtn}>Sobre...</a>
                     </Link>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function Listar({ empresas }) {
                   <h2 className="fw-normal text-center">{namefantasia}</h2>
                   <div className="text-center">
                     <Link href={`/admin/empresa/${_id}`}>
-                      <a className="btn btn-success btn-sm">+Info</a>
+                      <a className={s.sobreBtn}>Sobre...</a>
                     </Link>
                   </div>
                 </div>

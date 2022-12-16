@@ -193,13 +193,13 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     <br />
                     <br />
                     <label className={s.lab_inputs} htmlFor="Imagem1">Imagem 1:<span className={s.obg} >*</span></label>
-                    <CldUploadButton uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
+                    <CldUploadButton className="btn btn-success w-30" uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl(result.info.url)
                         console.log(url)
                         Cookies.set('url',url);
                     }} /><br/>
                     <label className={s.lab_inputs} htmlFor="Imagem2">Imagem 2:<span className={s.obg} >*</span></label>
-                    <CldUploadButton uploadPreset="oomqje1v"name="url2" value={form.url2=url2} onChange={handleChange} onUpload={function (error, result, widget) {
+                    <CldUploadButton className="btn btn-success w-30" uploadPreset="oomqje1v"name="url2" value={form.url2=url2} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl2(result.info.url)
                         console.log(url)
                         Cookies.set('url',url);

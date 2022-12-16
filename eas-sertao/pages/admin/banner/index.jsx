@@ -42,8 +42,6 @@ export default function Home({ banners }) {
 
 
       <section className={s.container9}>
-
-
         <div className={s.containerList}>
           <div className={s.botaoADM}>
             <Link href="/admin/banner/new">
@@ -63,16 +61,14 @@ export default function Home({ banners }) {
                 <div className={s.listaimagem}>
                 <img
                         src={url}
-                        width="240px"
-                        height="130px"
+                        width="340px"
+                        height="210px"
                         //layout='fill'
                         />
                 </div>
                 <div className={s.listaconteudo}>
                   <h2 >{name}</h2>
                   <h4 >{descricao}</h4>
-                </div>
-                <div className={s.lista3}>
                   <Link href={`/admin/banner/${_id}`}>
                     <a className="btn btn-success btn-sm">Detalhes</a>
                   </Link>

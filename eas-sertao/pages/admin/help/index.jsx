@@ -18,8 +18,7 @@ export default function Home({ }) {
       </header>
       <br />
       <br />
-      <br />
-      <section className={s.container8}>
+      <section>
         <div >
           <div className={s.opcao2}>
             <Link href="/admin/">

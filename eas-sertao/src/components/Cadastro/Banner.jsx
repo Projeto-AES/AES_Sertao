@@ -120,7 +120,7 @@ const Form = ({ formData, forNewBanner = true }) => {
                         <option value="terceiro">Terceiro</option>
                     </select>
                     <br/>
-                    <CldUploadButton uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
+                    <CldUploadButton className="btn btn-success" uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl(result.info.url)
                         console.log(url)
                         Cookies.set('url',url);
