@@ -45,12 +45,13 @@ export default function Home({ empresas }) {
            
           
           {
-            ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia }) => (
+            ordenadas.filter(e=>e.namefantasia.toLowerCase().startsWith(busca.toLowerCase()) && e.pagamento == "true").map(({ _id, namefantasia, url }) => (
               <div className={s.cardEmpresa} key={_id}>
                 <div className={s.cardEmpresaImg}>
-                  <Image
-                    src={comercio1}
-                    alt="Picture do comercio"
+                  <img
+                    src={url}
+                    width="240px"
+                    height="130px"
                   />
                   
                 </div>

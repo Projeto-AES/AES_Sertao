@@ -5,7 +5,7 @@ import conectarDB from "../../../../lib/dbConnect";
 import Empresa from "../../../../models/Empresa";
 import Link from 'next/link';
 import s from '../../../../styles/container.module.scss';
-import Banner from '../../../../src/components/Banner/Banner';
+
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -51,10 +51,10 @@ const EmpresaPage = ({ success, error, empresa }) => {
         <div class="carousel-wrapper">
             <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
                 <div>
-                    <img src={empresa.url}/>
+                    <img className={s.imgEmpresa} src={empresa.url}/>
                 </div>
                 <div>
-                    <img src={empresa.url2} />
+                    <img className={s.imgEmpresa} src={empresa.url2} />
                 </div>
             </Carousel>
         </div>
