@@ -83,12 +83,14 @@ const EmpresaPage = ({ success, error, empresa }) => {
                         </div>
 
                         <div className={s.opcao}>
+                        <br/><br/><br/>
                             <Link href={`/admin/empresa/${empresa._id}/edit`}>
                                 <   a className="btn btn-warning btn-sg me-2">Editar</a>
                             </Link>
                             <button className="btn btn-danger btn-sg" onClick={() => deleteData(empresa._id)}>Excluir</button>
                             <p></p>
                         </div>
+                        
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>
