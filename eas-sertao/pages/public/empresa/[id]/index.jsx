@@ -10,6 +10,9 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 
+import React, { Component } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
 
@@ -44,14 +47,19 @@ const EmpresaPage = ({ success, error, empresa }) => {
                         <p className={s.conteudo2}>
                             {empresa.namefantasia}
                         </p>
-
-                        <Banner></Banner>
+            
+        <div class="carousel-wrapper">
+            <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
+                <div>
+                    <img src={empresa.url}/>
+                </div>
+                <div>
+                    <img src={empresa.url2} />
+                </div>
+            </Carousel>
+        </div>
                         <p></p>
-                        <img
-                        src={empresa.url}
-                        //layout='fill'
                         
-                        />
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>

@@ -65,6 +65,7 @@ const EditEmpresa = () => {
     setor: empresa.setor,
     pagamento: empresa.pagamento,
     url: empresa.url,
+    url2: empresa.url2,
     instagram: empresa.instagram,
     facebook: empresa.facebook,
     whatsapp: empresa.whatsapp,

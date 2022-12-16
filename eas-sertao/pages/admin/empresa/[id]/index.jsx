@@ -11,6 +11,11 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useSession } from 'next-auth/react';
+
+
+import React, { Component } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 const EmpresaPage = ({ success, error, empresa }) => {
     const router = useRouter();
 
@@ -59,7 +64,22 @@ const EmpresaPage = ({ success, error, empresa }) => {
                             {empresa.namefantasia}
                         </p>
 
-                        <Banner></Banner>
+
+                        <div>
+              
+                        <div class="carousel-wrapper">
+            <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
+                <div>
+                    <img src={empresa.url}/>
+                </div>
+                <div>
+                    <img src={empresa.url2} />
+                </div>
+                
+            </Carousel>
+        </div>
+            </div>
+                        
                         <div className={s.opcao}>
                             <Link href={`/admin/empresa/${empresa._id}/edit`}>
                                 <   a className="btn btn-warning btn-sg me-2">Editar</a>
@@ -71,10 +91,6 @@ const EmpresaPage = ({ success, error, empresa }) => {
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>
 
-                        <img
-                        src={empresa.url}
-                        //layout='fill'
-                        />
 
                         <p className={s.conteudo}>
                             <b> Setor:</b> {empresa.setor}

@@ -49,6 +49,9 @@ const EmpresaSchema = new mongoose.Schema({
     url:{
         type: String,
     },
+    url2:{
+        type: String,
+    },
     instagram:{
         type: String,
     },

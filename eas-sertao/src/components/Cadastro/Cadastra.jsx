@@ -10,6 +10,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
 
     
     const [url, setUrl] = useState();
+    const [url2, setUrl2] = useState();
 
     const router = useRouter();
     const urlPronta = Cookies.get('url');
@@ -28,6 +29,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
         setor: formData.setor,
         pagamento: formData.pagamento,
         url: formData.url,
+        url2: formData.url2,
         instagram: formData.instagram,
         facebook: formData.facebook,
         whatsapp: formData.whatsapp,
@@ -190,12 +192,18 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     </select>
                     <br />
                     <br />
+                    <label className={s.lab_inputs} htmlFor="Imagem1">Imagem 1:<span className={s.obg} >*</span></label>
                     <CldUploadButton uploadPreset="oomqje1v"name="url" value={form.url=url} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl(result.info.url)
                         console.log(url)
                         Cookies.set('url',url);
-                    }} />
-                    <br/>
+                    }} /><br/>
+                    <label className={s.lab_inputs} htmlFor="Imagem2">Imagem 2:<span className={s.obg} >*</span></label>
+                    <CldUploadButton uploadPreset="oomqje1v"name="url2" value={form.url2=url2} onChange={handleChange} onUpload={function (error, result, widget) {
+                        setUrl2(result.info.url)
+                        console.log(url)
+                        Cookies.set('url',url);
+                    }} /><br/>
 
                     <label className={s.lab_inputs} htmlFor="responsavel">Responsável:<span className={s.obg} >*</span></label>
                     <input className="form-control my-2" type="text" placeholder="Ex: Maria Clara" autoComplete="off" name="responsavel" required value={form.responsavel} onChange={handleChange} />

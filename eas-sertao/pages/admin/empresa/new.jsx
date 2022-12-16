@@ -25,6 +25,7 @@ const New = () => {
         setor: "",
         pagamento: "",
         url: "",
+        url2: "",
         instagram: "",
         facebook: "",
         whatsapp: "",
