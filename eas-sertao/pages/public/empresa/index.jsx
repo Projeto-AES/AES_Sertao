@@ -4,8 +4,6 @@ import s from '../../../styles/container.module.scss'
 import conectarDB from '../../../lib/dbConnect';
 import Empresa from '../../../models/Empresa';
 import Link from 'next/link';
-import Image from 'next/image'
-import comercio1 from '../../../public/static/agroveterinaria.jpg'
 import { BiSearchAlt2 } from "react-icons/bi";
 import ButtonDown from '../../../src/components/ButtonDown/ButtonDown';
 import { useState } from "react";
@@ -58,7 +56,7 @@ export default function Home({ empresas }) {
                 <h2 className={s.titleCard}>{namefantasia}</h2>
                 <div className="text-center">
                   <Link href={`/public/empresa/${_id}`}>
-                  <a className={s.sobreBtn}>Sobre</a>
+                  <div class={s.btnblueqa}>Sobre</div>
                   </Link>
                 </div>
               </div>

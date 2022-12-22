@@ -57,7 +57,7 @@ export default function Home({ empresas }) {
                 <h2 className={s.titleCard}>{namefantasia}</h2>
                 <div className="text-center">
                   <Link href={`/public/empresa/${_id}`}>
-                    <a className="btn btn-success btn-sm">+Info</a>
+                  <div class={s.btnblueqa}>Sobre</div>
                   </Link>
                 </div>
               </div>

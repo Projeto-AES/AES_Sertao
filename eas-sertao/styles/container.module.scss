@@ -112,9 +112,32 @@ border-radius: 10px;
 height: auto;
 padding-bottom: 20px;
 }
+.lista2{
+    background-color: #fff;
+    margin: 10px 0px 10px 0px;
+    padding-top: 20px;
+    border-radius: 10px;
+    height: auto;
+    padding-bottom: 20px;
+    width: 500px;
+}
+.testes{
+    padding: 0 30px;
+
+}
+.listaconteudo{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
 
 .listaconteudo{
     text-align: center;
+    
+}
+.listaconteudo{
+    text-align: center;
+    display: flex;
 }
 .listaimagem{
     margin:0 15px;
@@ -314,4 +337,70 @@ padding-bottom: 20px;
     margin: auto;
     max-height: 550px;
     max-width: 800px;
+}
+
+// global style
+$color-button-blue: #3498db;
+$color-button-red: #db3434;
+$color-text: #ecf0f1;
+
+$font-family: Arial, helvetica, sans-serif;
+$font-size: 50%;
+
+// global style
+
+.btnblueqa  {
+	min-width: 100px;
+	position: relative;
+	display: inline-block;
+
+	text-align: center;
+	text-transform: uppercase; 
+
+	padding: 0px 10px;
+	//margin: 10px 5px;
+
+	font-size: $font-size;
+	font-weight: 400;
+
+	transition: 0.5s;
+}
+.btnredqa {
+	min-width: 100px;
+	position: relative;
+	display: inline-block;
+
+	text-align: center;
+	text-transform: uppercase; 
+
+	padding: 0px 10px;
+	//margin: 10px 5px;
+
+	font-size: $font-size;
+	font-weight: 400;
+
+	transition: 0.5s;
+}
+
+.btnblueqa {
+    border: 3px solid $color-button-blue;
+    color: $color-button-blue; }
+
+.btnredqa {
+    border: 3px solid $color-button-red;
+    color: $color-button-red,100%; }
+
+.btnblueqa:hover {
+	background-color: darken($color-button-blue, 5%);
+	border: 2px solid lighten($color-button-blue, 5%);
+	color: $color-text;
+
+	cursor: pointer;
+}
+.btnredqa:hover {
+	background-color: darken($color-button-red, 5%);
+	border: 2px solid lighten($color-button-red, 5%);
+	color: $color-text;
+
+	cursor: pointer;
 }

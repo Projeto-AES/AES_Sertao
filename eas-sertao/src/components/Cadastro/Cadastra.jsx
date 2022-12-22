@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { CldUploadButton } from 'next-cloudinary';
 import Cookies from 'js-cookie';
-import s from '../../../styles/container.module.scss'
+import s from '../../../styles/container.module.scss';
 import { IMaskInput } from "react-imask";
+
 
 const Form = ({ formData, forNewEmpresa = true }) => {
 
@@ -52,7 +53,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         //remover iframe
-        const clean = form.mapa.substring(13, form.mapa.length - 11);
+        const clean = form.mapa.substring(13, form.mapa.length - 132);
         form.mapa = clean;
 
         if (forNewEmpresa) {
@@ -157,32 +158,27 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     <select name="setor" value={form.setor} onChange={handleChange} required>
                         <option value="" disabled selected>Selecione a categoria<span className={s.obg} >*</span></option>
                         <option value="agropecuária">Agropecuária</option>
-                        <option value="agricola">Agrícola</option>
-                        <option value="automotivo">Automotivo</option>
+                        <option value="bemEstarSaude">Bem, estar e saúde</option>
                         <option value="autoeletrica">Auto Eletrica</option>
                         <option value="mecanica">Açougue</option>
-                        <option value="bar">Bar</option>
-                        <option value="barbearia">Barbearia</option>
-                        <option value="departamento">Departamento</option>
+                        <option value="banco">Banco</option>
+                        <option value="clinicaMedica">Clínica Médica</option>
+                        <option value="comercioCereais">Comércio de Cereais</option>
+                        <option value="consultorioDeAdvocacia">Consultório de advocacia</option>
+                        <option value="consultorioOsontoologico">Consultório Odontológico</option>
                         <option value="farmacia">Farmácia</option>
-                        <option value="financeiro">Financeiro</option>
-                        <option value="floricultura">Floricultura</option>
-                        <option value="hospital">Hospital</option>
-                        <option value="joalheria">Joalheria</option>
+                        <option value="lazer">Lazer</option>
+                        <option value="loja">Loja</option>
                         <option value="mecanica">Mecânica</option>
                         <option value="mercado">Mercado</option>
                         <option value="mercearia">Mercearia</option>
-                        <option value="vestimenta">Vestimenta</option>
                         <option value="restaurante">Restaurante</option>
-                        <option value="postodegasolina">Posto de gasolina</option>
-                        <option value="petshop">Pet Shop</option>
-                        <option value="religiao">Religião</option>
-                        <option value="taxi">Taxi</option>
-                        <option value="teleentrega">Tele Entrega</option>
-                        <option value="telecom">Telecomunicaçao</option>
-
+                        <option value="panificadora">Panificadora</option>
+                        <option value="salaoDeBeleza">Salão de Beleza</option>
+                        <option value="setorAgricola">Setor Agrícolas</option>
+                        <option value="sonorizacao">Sonorização</option>
+                        <option value="indComercioAgropecuaria">Indústria de Comércio Agropecuária</option>
                     </select>
-
                     <br />
                     <label className={s.lab_inputs} htmlFor="Setor">Situação Cadastral:<span className={s.obg} >*</span></label><br />
                     <select name="pagamento" value={form.pagamento} onChange={handleChange} required>
@@ -193,13 +189,13 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     <br />
                     <br />
                     <label className={s.lab_inputs} htmlFor="Imagem1">Imagem 1:<span className={s.obg} >*</span></label>
-                    <CldUploadButton  className="btn btn-success w-30" uploadPreset="oomqje1v" name="url" value={form.url = url} onChange={handleChange} onUpload={function (error, result, widget) {
+                    <CldUploadButton className="btn btn-success w-30" uploadPreset="oomqje1v" name="url" value={form.url = url} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl(result.info.url)
                         console.log(url)
                         Cookies.set('url', url);
                     }} /><br />
                     <label className={s.lab_inputs} htmlFor="Imagem2">Imagem 2:<span className={s.obg} >*</span></label>
-                    <CldUploadButton  className="btn btn-success w-30" uploadPreset="oomqje1v" name="url2" value={form.url2 = url2} onChange={handleChange} onUpload={function (error, result, widget) {
+                    <CldUploadButton className="btn btn-success w-30" uploadPreset="oomqje1v" name="url2" value={form.url2 = url2} onChange={handleChange} onUpload={function (error, result, widget) {
                         setUrl2(result.info.url)
                         console.log(url)
                         Cookies.set('url', url);

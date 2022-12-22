@@ -10,29 +10,25 @@ import Dropdown from 'react-bootstrap/Dropdown';
       <Dropdown.Menu  >
         <Dropdown.Item  href="/public/empresa"><b>Mostrar todas</b></Dropdown.Item>
         <Dropdown.Item href="/public/categoria/agropecuária">Agropecuaria</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/agricola">Agrícola</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/automotivo">Automotivo</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/bemEstarSaude">Bem, estar e saúde</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/autoeletrica">Auto Eletrica</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/mecanica">Açougue</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/bar">Bar</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/barbearia">Barbearia</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/departamento">Departamento</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/banco">Banco</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/clinicaMedica">Clínica Médica</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/comercioCereais">Comércio de Cereais</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/consultorioDeAdvocacia">Consultório de advocacia</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/consultorioOsontoologico">Consultório Odontológico</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/farmacia">Farmácia</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/financeiro">Financeiro</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/floricultura">Floricultura</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/hospital">Hospital</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/joalheria">Joalheria</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/lazer">Lazer</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/loja">Loja</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/mecanica">Mecânica</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/mercado">Mercado</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/mercearia">Mercearia</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/vestimenta">Vestimenta</Dropdown.Item>
         <Dropdown.Item href="/public/categoria/restaurante">Restaurante</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/postodegasolina">Posto de gasolina</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/petshop">Pet Shop</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/religiao">Religião</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/taxi">Taxi</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/teleentrega">Tele Entrega</Dropdown.Item>
-        <Dropdown.Item href="/public/categoria/telecom">Telecomunicaçao</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/panificadora">Panificadora</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/salaoDeBeleza">Salão de Beleza</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/setorAgricola">Setor Agrícolas</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/sonorizacao">Sonorização</Dropdown.Item>
+        <Dropdown.Item href="/public/categoria/indComercioAgropecuaria">Indústria de Comércio Agropecuária</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

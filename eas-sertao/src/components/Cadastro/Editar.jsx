@@ -54,9 +54,11 @@ const Form = ({ formData, forNewEmpresa = true }) => {
         //remover iframe
         //const clean = form.mapa.substring(13, form.mapa.length - 11);
         //form.mapa = clean;
-
+        
         if (forNewEmpresa) {
+            
             postData(form);
+            
         } else {
             putData(form);
         }
@@ -88,6 +90,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                 }
             } else {
                 setMenssage([]);
+                
                 router.push("/admin");
             }
         } catch (error) {
@@ -104,6 +107,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     "Content-type": "application/json",
                 },
                 body: JSON.stringify(form),
+                
             });
 
             const data = await res.json();
@@ -118,6 +122,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     ]);
                 }
             } else {
+                
                 router.push("/admin");
             }
         } catch (error) {
@@ -230,6 +235,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     ))}
                 </form>
             </div>
+            <NotificationContainer />
         </div>
     );
 };

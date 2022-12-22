@@ -4,8 +4,6 @@ import s from '../../styles/container.module.scss'
 import conectarDB from '../../lib/dbConnect';
 import Empresa from '../../models/Empresa';
 import Link from 'next/link';
-import Image from 'next/image'
-import comercio1 from '../../public/static/agroveterinaria.jpg'
 import { BiLogOut } from "react-icons/bi";
 
 import { useSession, signIn, signOut } from "next-auth/react"
@@ -33,25 +31,28 @@ export default function Listar({ empresas }) {
       <header>
         <Header />
       </header>
-{/* botao Sair*/}
-<div className={s.sair}>
-            <button className={s.out} onClick={() => {
-              signOut({ redirect: false })
-            }}>SAIR<BiLogOut size={25} /></button>
-          </div>
+      {/* botao Sair*/}
+      <div className={s.sair}>
+        <button className={s.out} onClick={() => {
+          signOut({ redirect: false })
+        }}>SAIR<BiLogOut size={25} /></button>
+      </div>
       <section className={s.container}>
+
         {/* botao cadastro de empresa*/}
         <div className={s.botaoADM}>
           <Link href="/admin/empresa/new">
             <button className={s.cadastro}>Cadastrar Nova Empresa</button>
           </Link>
         </div>
+
         {/* botao Turoriais*/}
         <div className={s.botaoADM}>
           <Link href="/admin/help/">
             <button className={s.cadastro}>Ajuda / Tutoriais</button>
           </Link>
         </div>
+
         {/* botao Editar Banner*/}
         <div className={s.botaoADM}>
           <Link href="/admin/banner">
@@ -59,9 +60,14 @@ export default function Listar({ empresas }) {
           </Link>
         </div>
 
-        <div className={s.admin}>
+        {/* botao Editar Banner*/}
+        <div className={s.botaoADM}>
+          <Link href="/admin/login/">
+            <button className={s.cadastro}>Lista Usuários</button>
+          </Link>
+        </div>
 
-            
+        <div className={s.admin}>
 
           <form className={s.busca}>
             <input
@@ -88,7 +94,7 @@ export default function Listar({ empresas }) {
                   <h2 className="fw-normal text-center">{namefantasia}</h2>
                   <div className="text-center">
                     <Link href={`/admin/empresa/${_id}`}>
-                    <a className={s.sobreBtn}>Sobre...</a>
+                      <div class={s.btnblueqa}>Sobre</div>
                     </Link>
                   </div>
                 </div>
@@ -105,7 +111,7 @@ export default function Listar({ empresas }) {
                   <h2 className="fw-normal text-center">{namefantasia}</h2>
                   <div className="text-center">
                     <Link href={`/admin/empresa/${_id}`}>
-                      <a className={s.sobreBtn}>Sobre...</a>
+                      <div class={s.btnredqa}>Sobre</div>
                     </Link>
                   </div>
                 </div>

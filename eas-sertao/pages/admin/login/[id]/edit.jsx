@@ -1,4 +1,4 @@
-import Form from "../../../../src/components/Cadastro/Editar";
+import Form from "../../../../src/components/Cadastro/Usuario";
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
 import { useSession } from 'next-auth/react';
@@ -21,13 +21,13 @@ const fetcher = async (url) => {
 };
 
 
-const EditEmpresa = () => {
+const EditUser = () => {
 
   const router = useRouter();
   const { id } = router.query;
 
-  const { data: empresa, error } = useSWR(
-    id ? `/api/empresa/${id}` : null,
+  const { data: user, error } = useSWR(
+    id ? `/api/user/${id}` : null,
     fetcher
   );
   //sessão
@@ -43,7 +43,7 @@ const EditEmpresa = () => {
     return <div>Error</div>;
   }
 
-  if (!empresa) {
+  if (!user) {
     return (
       <div className="container mt-5 text-center">
         <h1>Loading...</h1>
@@ -52,39 +52,20 @@ const EditEmpresa = () => {
   }
 
   const formData = {
-    numerosocio: empresa.numerosocio,
-    cnpj: empresa.cnpj,
-    namejuridico: empresa.namejuridico,
-    namefantasia: empresa.namefantasia,
-    endereco: empresa.endereco,
-    email: empresa.email,
-    telefonefixo: empresa.telefonefixo,
-    telefonecelular: empresa.telefonecelular,
-    tipopessoa: empresa.tipopessoa,
-    responsavel: empresa.responsavel,
-    setor: empresa.setor,
-    pagamento: empresa.pagamento,
-    url: empresa.url,
-    url2: empresa.url2,
-    instagram: empresa.instagram,
-    facebook: empresa.facebook,
-    whatsapp: empresa.whatsapp,
-    mapa: empresa.mapa,
-    inscricaoestadual: empresa.inscricaoestadual,
-    dataadmissao: empresa.dataadmissao,
+    email: user.email,
+    senha: user.senha,
   };
 
   return (
     <div >
       <Header />
       <div className="container" style={{ backgroundColor: "#f1f1f1", borderRadius: "10px", padding: "20px" }}>
-        <h2 className={s.h2}>Editar Empresa</h2>
-        <Form forNewEmpresa={false} formData={formData}></Form>
-        
+        <h2 className={s.h2}>Editar Usuário</h2>
+        <Form forNewUser={false} formData={formData}></Form>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default EditEmpresa;
+export default EditUser;
