@@ -2,7 +2,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 110px;
+    //height: 110px;
     background-color: #2B2B24;
     display: flex;
     flex-direction: column;
@@ -30,14 +30,13 @@
 .aa {
     color: rgb(205, 201, 201);
     bottom: 0;
-    
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 6vh;
+    height: 4vh;
     width: 100%;
     background-color: rgb(15, 15, 15);
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-size: clamp(0.7rem, 1.4vw, 0.9rem);
 }
 
 .sociais {
@@ -91,4 +90,11 @@
     .aa{
         font-size: clamp(0.8rem, 2.2vw, 1.4rem);
     }
+}
+
+
+.teste{
+    display: flex;
+    padding: 0 15px ;
+    color: rgba(205, 201, 201, 0.668);
 }

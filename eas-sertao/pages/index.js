@@ -9,8 +9,10 @@ import Empresas from '../src/components/Empresa/Empresas';
 import Sobre from '../src/components/Sobre/Sobre'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import Link from 'next/link';
 
 export default function Home({ banners }) {
+ 
   return (
     <section className='index'>
       <header>
@@ -23,11 +25,11 @@ export default function Home({ banners }) {
             {
               banners.map(({ _id, url, link }) => (
                 <div className="text-center" key={_id}>
-                  
-                    <div className={s.banner}>
-                      <img src={url} />
-                    </div>
-                  
+
+                  <div className={s.banner}>
+                    <img src={url} />
+                  </div>
+
 
                 </div>
               ))
@@ -39,14 +41,14 @@ export default function Home({ banners }) {
 
       <div className={s.divCategoriasEmpresas}>
         <div>
-          <form className={s.busca}>
+          <form className={s.busca} >
             <ButtonDown />
             <input
               className={s.pesquisa}
               type="text"
               placeholder="Search"
-              name="pesquisa"
               id="pesquisa"
+              
             />
             <button className={s.but} type='submit'><BiSearchAlt2 size={25} /></button>
             <Empresas />

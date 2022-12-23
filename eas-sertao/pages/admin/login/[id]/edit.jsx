@@ -53,7 +53,7 @@ const EditUser = () => {
 
   const formData = {
     email: user.email,
-    senha: user.senha,
+    senha: user.senha
   };
 
   return (

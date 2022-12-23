@@ -1,10 +1,8 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
-import { CldUploadButton } from 'next-cloudinary';
-import Cookies from 'js-cookie';
 import s from '../../../styles/container.module.scss';
-import { IMaskInput } from "react-imask";
+
 
 
 const Form = ({ formData, forNewUser = true }) => {
@@ -95,7 +93,7 @@ const Form = ({ formData, forNewUser = true }) => {
                     ]);
                 }
             } else {
-                router.push("/admin");
+                router.push("/admin/login");
             }
         } catch (error) {
             console.log(error);

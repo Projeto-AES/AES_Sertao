@@ -80,7 +80,6 @@ const EditEmpresa = () => {
       <div className="container" style={{ backgroundColor: "#f1f1f1", borderRadius: "10px", padding: "20px" }}>
         <h2 className={s.h2}>Editar Empresa</h2>
         <Form forNewEmpresa={false} formData={formData}></Form>
-        
       </div>
       <Footer />
     </div>

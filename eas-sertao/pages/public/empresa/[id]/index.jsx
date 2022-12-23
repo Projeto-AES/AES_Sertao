@@ -47,19 +47,19 @@ const EmpresaPage = ({ success, error, empresa }) => {
                         <p className={s.conteudo2}>
                             {empresa.namefantasia}
                         </p>
-            
-        <div class="carousel-wrapper">
-            <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
-                <div>
-                    <img className={s.imgEmpresa} src={empresa.url}/>
-                </div>
-                <div>
-                    <img className={s.imgEmpresa} src={empresa.url2} />
-                </div>
-            </Carousel>
-        </div>
+
+                        <div class="carousel-wrapper">
+                            <Carousel infiniteLoop useKeyboardArrows autoPlay transactionTime >
+                                <div>
+                                    <img className={s.imgEmpresa} src={empresa.url} />
+                                </div>
+                                <div>
+                                    <img className={s.imgEmpresa} src={empresa.url2} />
+                                </div>
+                            </Carousel>
+                        </div>
                         <p></p>
-                        
+
                         <p className={s.conteudo}>
                             <b> Responsável:</b> {empresa.responsavel}
                         </p>
@@ -80,20 +80,21 @@ const EmpresaPage = ({ success, error, empresa }) => {
                             <b>  Endereço:</b> {empresa.endereco}
                         </p>
                         <div className={s.soc}>
-                        {empresa.instagram.length !=0 ?
-                         <Link href={empresa.instagram}>
-                                <RiInstagramFill className={s.ico2} />
-                            </Link> : ''}
+                            {empresa.instagram.length != 0 ?
                             
-                        {empresa.facebook.length !=0 ?
-                        <Link href={empresa.facebook}>
-                                <FaFacebookSquare className={s.ico2} />
-                            </Link> : ''}
+                                <Link href={empresa.instagram}>
+                                    <RiInstagramFill className={s.ico2} />
+                                </Link> : ''}
 
-                        {empresa.whatsapp.length !=0 ?
-                            <Link href={empresa.whatsapp}>
-                                <IoLogoWhatsapp className={s.ico2} />
-                            </Link> : ''}
+                            {empresa.facebook.length != 0 ?
+                                <Link href={empresa.facebook}>
+                                    <FaFacebookSquare className={s.ico2} />
+                                </Link> : ''}
+
+                            {empresa.whatsapp.length != 0 ?
+                                <Link href={empresa.whatsapp}>
+                                    <IoLogoWhatsapp className={s.ico2} />
+                                </Link> : ''}
                         </div>
                         <div>
                             <iframe src={empresa.mapa}

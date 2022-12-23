@@ -55,6 +55,10 @@ const Form = ({ formData, forNewEmpresa = true }) => {
         //remover iframe
         const clean = form.mapa.substring(13, form.mapa.length - 132);
         form.mapa = clean;
+        // link whatsapp
+        const valor = "https://wa.me/55";
+        const numero = (valor + form.whatsapp)
+        form.whatsapp = numero;
 
         if (forNewEmpresa) {
             postData(form);
@@ -144,9 +148,9 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     <label className={s.lab_inputs} htmlFor="email">Email:<span className={s.obg} >*</span></label>
                     <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" className="form-control my-2" type="email" placeholder="Ex: exemplo@gmail.com" autoComplete="off" name="email" required value={form.email} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="telefonecelular">Telefone Celular:<span className={s.obg} >*</span></label>
-                    <IMaskInput mask="(00) 00000-0000" className="form-control my-2" type="tel" placeholder="Ex:(54) 00000-0000" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange} />
+                    <IMaskInput mask="(00) 00000-0000" className="form-control my-2" type="text" placeholder="Ex:(54) 00000-0000" autoComplete="off" name="telefonecelular" required value={form.telefonecelular} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="telefonefixo">Telefone Fixo:</label>
-                    <IMaskInput mask="(00) 00000-0000" className="form-control my-2" type="tel" placeholder="Ex:(54) 00000-0000" autoComplete="off" name="telefonefixo" value={form.telefonefixo} onChange={handleChange} />
+                    <IMaskInput mask="(00) 00000-0000" className="form-control my-2" type="text" placeholder="Ex:(54) 00000-0000" autoComplete="off" name="telefonefixo" value={form.telefonefixo} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="tipopessoa">Tipo da pessoa:<span className={s.obg} >*</span></label><br />
                     <select name="tipopessoa" value={form.tipopessoa} onChange={handleChange} required>
                         <option value="" disabled selected>Selecione tipo da pessoa</option>
@@ -209,7 +213,7 @@ const Form = ({ formData, forNewEmpresa = true }) => {
                     <label className={s.lab_inputs} htmlFor="facebook">Facebook:</label>
                     <input className="form-control my-2" type="url" placeholder="Ex: Link do Facebook" autoComplete="off" name="facebook" value={form.facebook} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="whatsapp">Whatsapp:</label>
-                    <input className="form-control my-2" type="url" placeholder="Ex: Link do Whatsapp" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange} />
+                    <input className="form-control my-2" type="text" placeholder="Ex:54912345678" autoComplete="off" name="whatsapp" value={form.whatsapp} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="mapa">Localização:<span className={s.obg} >*</span></label>
                     <input className="form-control my-2" type="text" placeholder="Ex: Link da localização Google Maps" autoComplete="off" name="mapa" required value={form.mapa} onChange={handleChange} />
                     <label className={s.lab_inputs} htmlFor="inscricaoestadual">Inscrição estadual:</label>

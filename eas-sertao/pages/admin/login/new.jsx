@@ -14,7 +14,7 @@ const New = () => {
     }
     const formData = {
         email: "",
-        senha: "", 
+        senha: "",
     };
 
     return (

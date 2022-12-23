@@ -1,4 +1,4 @@
-.container{
+.container {
     // max-width: 800px;
     margin: 0 auto;
     display: flex;
@@ -6,22 +6,23 @@
     align-items: center;
     background-color: #f1f1f6;
     margin-bottom: 120px;
-    
+
 }
 
-.containerGrid{
-    @media (min-width: 768px){
+.containerGrid {
+    @media (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap:13px; 
-        
+        grid-gap: 13px;
+
     }
-    @media (min-width: 1200px){
+
+    @media (min-width: 1200px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-.contentEmpresa{
+.contentEmpresa {
     text-align: center;
     width: 100%;
     max-width: 750px;
@@ -33,25 +34,28 @@
     min-height: 5vh;
     font-size: clamp(1.3rem, 1.8vw, 1.5rem);
 
-    @media (min-width: 768px) {padding: 20px 20px 25px 20px;}
+    @media (min-width: 768px) {
+        padding: 20px 20px 25px 20px;
+    }
 }
 
-.busca1{
+.busca1 {
     display: flex;
     align-self: stretch;
 }
-.busca{
+
+.busca {
     margin: 0 auto;
     margin-top: 2vh;
     display: flex;
 }
 
-.titleCard{
+.titleCard {
     text-align: center;
     font-weight: 400;
 }
 
-.but{
+.but {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     background-color: rgba(255, 255, 255, 1);
@@ -75,7 +79,7 @@
     margin-bottom: 40px;
 }
 
-.container{
+.container {
     min-height: 612px;
     margin: 0 auto;
     display: flex;
@@ -84,7 +88,8 @@
     background-color: #f1f1f6;
     margin-bottom: 120px;
 }
-.container8{
+
+.container8 {
     min-height: 536px;
     margin: 0 auto;
     display: flex;
@@ -94,7 +99,8 @@
     margin-bottom: 120px;
     z-index: 1000;
 }
-.container9{
+
+.container9 {
     min-height: 650px;
     // display:flex;
     // flex-direction: column;
@@ -104,63 +110,69 @@
     z-index: 1000;
 }
 
-.lista{
-background-color: #fff;
-margin: 10px 0px 10px 0px;
-padding-top: 20px;
-border-radius: 10px;
-height: auto;
-padding-bottom: 20px;
-}
-.lista2{
+.lista {
     background-color: #fff;
     margin: 10px 0px 10px 0px;
     padding-top: 20px;
     border-radius: 10px;
     height: auto;
     padding-bottom: 20px;
-    width: 500px;
 }
-.testes{
+
+.lista2 {
+    background-color: #fff;
+    margin: 10px 0px 10px 0px;
+    padding-top: 20px;
+    border-radius: 10px;
+    height: auto;
+    padding-bottom: 20px;
+    min-width: 500px;
+    
+}
+
+.testes {
     padding: 0 30px;
 
 }
-.listaconteudo{
+
+.listaconteudo {
     text-align: center;
     display: flex;
     justify-content: space-between;
 }
 
-.listaconteudo{
+.listaconteudo {
     text-align: center;
-    
-}
-.listaconteudo{
-    text-align: center;
-    display: flex;
-}
-.listaimagem{
-    margin:0 15px;
-    border:1px solid #36404b
+
 }
 
-.containerList{
+.listaconteudo {
+    text-align: center;
     display: flex;
-    flex-direction:column;
+}
+
+.listaimagem {
+    margin: 0 15px;
+    border: 1px solid #36404b
+}
+
+.containerList {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.cardEmpresaImg{
+.cardEmpresaImg {
     height: 180px;
 
-    img{
+    img {
         object-fit: contain;
         max-height: 180px;
     }
 }
 
 
-.cardEmpresa{
+.cardEmpresa {
     text-align: center;
     width: 350px;
     margin: 0 auto;
@@ -173,13 +185,13 @@ padding-bottom: 20px;
     font-size: clamp(1rem, -0.875rem + 3.33vw, 3rem);
 }
 
-.busca{
+.busca {
     display: flex;
     justify-content: center;
-    margin: 20px; 
+    margin: 20px;
 }
 
-.pesquisa{
+.pesquisa {
     background-color: rgba(235, 233, 233, 0.7);
     padding: 6px;
     border-end-start-radius: 6px;
@@ -194,7 +206,7 @@ padding-bottom: 20px;
     color: #36404b !important;
 }
 
-.sobreBtn{
+.sobreBtn {
     padding: 6px 12px;
     background-color: #198754;
     color: #f5f5f5;
@@ -203,7 +215,8 @@ padding-bottom: 20px;
     font-size: 18px;
     text-decoration: none;
     margin-top: 2px;
-    &:hover{
+
+    &:hover {
         font-size: 19px;
         padding: 6px 33px;
         transition-duration: 1s;
@@ -221,25 +234,26 @@ padding-bottom: 20px;
     margin-bottom: 40px;
 }
 
-.conteudo{
+.conteudo {
     text-align: left;
     padding-left: 2%;
     font-size: clamp(1.2rem, 1.6vw, 1.4rem);
 }
 
-.boxBtn{
+.boxBtn {
     display: flex;
     flex-direction: column;
     // margin: 20px auto;
     // max-width: 80%;
 }
 
-#indexBtn{
+#indexBtn {
     width: 320px;
     margin: 5px;
     background-color: red !important;
 }
-.indexBtn{
+
+.indexBtn {
     width: 320px;
     font-size: 1.25rem;
     margin: 5px;
@@ -247,39 +261,42 @@ padding-bottom: 20px;
     background-color: red !important;
 }
 
-.conteudo2{
+.conteudo2 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size:clamp(2.1rem, 3vw, 2.5rem);
+    font-size: clamp(2.1rem, 3vw, 2.5rem);
     font-weight: bold;
-    color:#120a8f;
+    color: #120a8f;
 }
-.conteudo3{
+
+.conteudo3 {
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 3px;
     display: flex;
     justify-content: center;
 }
 
-.ico2{
+.ico2 {
     cursor: pointer;
     font-size: clamp(2.2rem, 3.3vw, 2.6rem);
     margin-top: 2vh;
     text-align: center;
     margin-left: 5vh;
 }
-.soc{
+
+.soc {
     text-align: center;
     margin-bottom: 3vh;
 }
 
-.opcao{
+.opcao {
     position: -webkit-sticky;
     position: sticky;
     top: 10px;
     z-index: 100;
 }
-.opcao2{
+
+.opcao2 {
     display: flex;
     position: -webkit-sticky;
     position: sticky;
@@ -288,17 +305,17 @@ padding-bottom: 20px;
     left: 0;
 }
 
-.out{
+.out {
     font-size: 15;
     border-radius: 8px;
-    
+
 }
 
-.botaoADM{
+.botaoADM {
     margin-top: 20px;
 }
 
-.botaoADM button{
+.botaoADM button {
     display: flex;
     width: auto;
     align-items: center;
@@ -307,33 +324,34 @@ padding-bottom: 20px;
     margin: 0;
 }
 
-.lab_inputs{
-    font-size:clamp(1rem, 1.2vw, 1.3rem);
-    
+.lab_inputs {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+
     margin-top: 1vh;
 }
 
 
 
-.obg{
+.obg {
     color: red;
     font-size: 2.7vh;
 }
 
-.sair{
+.sair {
     display: flex;
     justify-content: flex-end;
-    
+
 }
-.banner{
+
+.banner {
     display: flex;
     max-height: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    
+
 }
 
-.imgEmpresa{
+.imgEmpresa {
     margin: auto;
     max-height: 550px;
     max-width: 800px;
@@ -349,58 +367,62 @@ $font-size: 50%;
 
 // global style
 
-.btnblueqa  {
-	min-width: 100px;
-	position: relative;
-	display: inline-block;
+.btnblueqa {
+    min-width: 100px;
+    position: relative;
+    display: inline-block;
 
-	text-align: center;
-	text-transform: uppercase; 
+    text-align: center;
+    text-transform: uppercase;
 
-	padding: 0px 10px;
-	//margin: 10px 5px;
+    padding: 0px 10px;
+    //margin: 10px 5px;
 
-	font-size: $font-size;
-	font-weight: 400;
+    font-size: $font-size;
+    font-weight: 400;
 
-	transition: 0.5s;
+    transition: 0.5s;
 }
+
 .btnredqa {
-	min-width: 100px;
-	position: relative;
-	display: inline-block;
+    min-width: 100px;
+    position: relative;
+    display: inline-block;
 
-	text-align: center;
-	text-transform: uppercase; 
+    text-align: center;
+    text-transform: uppercase;
 
-	padding: 0px 10px;
-	//margin: 10px 5px;
+    padding: 0px 10px;
+    //margin: 10px 5px;
 
-	font-size: $font-size;
-	font-weight: 400;
+    font-size: $font-size;
+    font-weight: 400;
 
-	transition: 0.5s;
+    transition: 0.5s;
 }
 
 .btnblueqa {
     border: 3px solid $color-button-blue;
-    color: $color-button-blue; }
+    color: $color-button-blue;
+}
 
 .btnredqa {
     border: 3px solid $color-button-red;
-    color: $color-button-red,100%; }
+    color: $color-button-red, 100%;
+}
 
 .btnblueqa:hover {
-	background-color: darken($color-button-blue, 5%);
-	border: 2px solid lighten($color-button-blue, 5%);
-	color: $color-text;
+    background-color: darken($color-button-blue, 5%);
+    border: 2px solid lighten($color-button-blue, 5%);
+    color: $color-text;
 
-	cursor: pointer;
+    cursor: pointer;
 }
-.btnredqa:hover {
-	background-color: darken($color-button-red, 5%);
-	border: 2px solid lighten($color-button-red, 5%);
-	color: $color-text;
 
-	cursor: pointer;
+.btnredqa:hover {
+    background-color: darken($color-button-red, 5%);
+    border: 2px solid lighten($color-button-red, 5%);
+    color: $color-text;
+
+    cursor: pointer;
 }
